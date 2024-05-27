@@ -68,6 +68,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.5",
     "axios": "^1.7.2",
     "chart.js": "^4.4.3",
     "mapbox-gl": "^3.4.0",

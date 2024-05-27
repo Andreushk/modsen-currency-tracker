@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface IStyleProps {
+  $isOn: boolean;
+}
+
 export const StyledButton = styled.button`
   cursor: pointer;
   position: relative;
@@ -10,13 +14,15 @@ export const StyledButton = styled.button`
   border-radius: ${({ theme }) => theme.widths[5]};
 `;
 
-export const StyledSpan = styled.span`
+export const StyledSpan = styled.span<IStyleProps>`
   position: absolute;
-  top: ${({ theme }) => theme.spaces[0]};
-  left: ${({ theme }) => theme.spaces[0]};
   display: block;
   width: ${({ theme }) => theme.widths[3]};
   height: ${({ theme }) => theme.widths[3]};
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.text.primary};
+
+  top: ${({ theme }) => theme.spaces[0]};
+  left: ${({ theme, $isOn }) => (!$isOn ? theme.spaces[0] : 'unset')};
+  right: ${({ theme, $isOn }) => ($isOn ? theme.spaces[0] : 0)};
 `;

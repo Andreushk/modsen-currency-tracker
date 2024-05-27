@@ -36,6 +36,7 @@
     "jest/no-conditional-expect": "warn",
     "jsx-a11y/control-has-associated-label": "off",
     "import/no-extraneous-dependencies": "warn",
+    "no-param-reassign": "off",
     "radix": "off",
     "import/extensions": [
       "off",
