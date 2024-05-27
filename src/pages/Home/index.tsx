@@ -1,3 +1,9 @@
-const Home: React.FC = () => <div>This is home page</div>;
+import { IntroductionSection } from '@/components';
+
+const Home: React.FC = () => (
+  <main>
+    <IntroductionSection />
+  </main>
+);
 
 export default Home;

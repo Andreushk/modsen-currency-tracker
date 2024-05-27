@@ -7,11 +7,13 @@ import { Routes } from '@/constants/routes';
 import StyledContainer from './styled';
 
 interface IComponentProps {
-  size: number;
+  size?: number;
+  width?: number;
+  height?: number;
   withNavigation?: boolean;
 }
 
-const Logo: React.FC<IComponentProps> = ({ size, withNavigation = false }) => {
+const Logo: React.FC<IComponentProps> = ({ size, width, height, withNavigation = false }) => {
   const navigate = useNavigate();
 
   const handleClick = (): void => {
@@ -20,7 +22,7 @@ const Logo: React.FC<IComponentProps> = ({ size, withNavigation = false }) => {
 
   return (
     <StyledContainer $withPointerCursor={withNavigation} onClick={handleClick} data-testid="logo">
-      <LogoIcon width={size} height={size} />
+      <LogoIcon width={width || size} height={height || size} />
     </StyledContainer>
   );
 };
