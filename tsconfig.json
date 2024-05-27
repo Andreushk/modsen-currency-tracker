@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["@testing-library/jest-dom"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "outDir": "./dist/",
@@ -16,6 +17,7 @@
       "@/*": ["./src/*"]
     }
   },
+  "exclude": ["node_modules", ".next", "out", "build", "cypress.config.ts"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

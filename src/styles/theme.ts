@@ -10,6 +10,7 @@ const darkColors: IPalette = {
     primary: '#fff',
     secondary: '#D9D9D9',
     context: '#A7B2C3',
+    accent: '#00bc4f',
     links: '#898989',
   },
   borders: '#474747',
@@ -26,6 +27,7 @@ const lightColors: IPalette = {
     primary: '#1A1A1A',
     secondary: '#616161',
     context: '#8E8E8E',
+    accent: '#00bc4f',
     links: '#2196F3',
   },
   borders: '#CBCBCB',
@@ -39,87 +41,94 @@ const breakpoints: IBreakpoints = {
   tabletS: '768px',
   tabletM: '885px',
   laptopS: '1000px',
-  laptopM: '1200px',
-  desktopS: '1400px',
-  desktopM: '1600px',
-  desktopL: '1800px',
+  laptopM: '1100px',
+  desktopS: '1200px',
+  desktopM: '1300px',
+  desktopL: '1400px',
 };
 
 const widths: string[] = [
-  '4px', // 4px
-  '8px', // 8px
-  '16px', // 16px
-  '50px', // 50px
-  '80px', // 80px
-  '450px', // 450px
-  '482px', // 482px
-  '520px', // 520px
-  '1440px', // 1440px
+  '4px', // 4px 0
+  '8px', // 8px 1
+  '16px', // 16px 2
+  '17px', // 17px 3
+  '24px', // 24px 4
+  '50px', // 50px 5
+  '80px', // 80px 6
+  '450px', // 450px 7
+  '482px', // 482px 8
+  '520px', // 520px 9
+  '1440px', // 1440px 10
 ];
 
 const heights: string[] = [
-  '2px', // 2px
-  '4px', // 4px
-  '8px', // 8px
-  '16px', // 16px
-  '65px', // 65px
-  '114px', // 114px
-  '153px', // 153px
-  '460px', // 460px
-  '490px', // 490px
+  '2px', // 2px 0
+  '4px', // 4px 1
+  '8px', // 8px 2
+  '16px', // 16px 3
+  '25px', // 25px 4
+  '65px', // 65px 5
+  '103px', // 103px 6
+  '114px', // 114px 7
+  '153px', // 153px 8
+  '460px', // 460px 9
+  '490px', // 490px 10
 ];
 
 const spaces: string[] = [
-  '4px', // 4px
-  '8px', // 8px
-  '16px', // 16px
-  '18px', // 18px
-  '24px', // 24px
-  '30px', // 30px
-  '32px', // 32px
-  '40px', // 40px
-  '50px', // 50px
-  '56px', // 56px
-  '58px', // 58px
-  '64px', // 64px
-  '80px', // 80px
-  '86px', // 86px
-  '96px', // 96px
-  '115px', // 115px
-  '155px', // 155px
-  '184px', // 184px
+  '2px', // 2px 0
+  '4px', // 4px 1
+  '8px', // 8px 2
+  '16px', // 16px 3
+  '18px', // 18px 4
+  '24px', // 24px 5
+  '30px', // 30px 6
+  '32px', // 32px 7
+  '40px', // 40px 8
+  '50px', // 50px 9
+  '56px', // 56px 10
+  '58px', // 58px 11
+  '64px', // 64px 12
+  '80px', // 80px 13
+  '86px', // 86px 14
+  '96px', // 96px 15
+  '115px', // 115px 16
+  '155px', // 155px 17
+  '184px', // 184px 18
 ];
+
+const borderWidths = ['2px'];
 
 const borderRadiuses: string[] = ['8px'];
 
 const fontSizes: string[] = [
-  '12px', // 0 12px
-  '16px', // 1 16px
-  '18px', // 2 18px
-  '20px', // 3 20px
-  '24px', // 4 24px
-  '25px', // 5 25px
-  '26px', // 6 26px
-  '28px', // 7 28px
-  '30px', // 8 30px
-  '32px', // 9 32px
-  '32.91px', // 10 32.91px
-  '35px', // 11 35px
-  '76px', // 12 76px
+  '12px', // 12px 0
+  '16px', // 16px 1
+  '18px', // 18px 2
+  '20px', // 20px 3
+  '24px', // 24px 4
+  '25px', // 25px 5
+  '26px', // 26px 6
+  '28px', // 28px 7
+  '30px', // 30px 8
+  '32px', // 32px 9
+  '32.91px', // 32.91px 10
+  '35px', // 35px 11
+  '76px', // 76px 12
 ];
 
 const lineHeights: string[] = [
-  '18px', // 0 18px
-  '24px', // 1 24px
-  '27px', // 2 27px
-  '36px', // 3 36px
-  '39px', // 4 39px
-  '41.14px', // 5 41.14px
-  '42px', // 6 42px
-  '45px', // 7 45px
-  '46.77px', // 8 46.77px
-  '49.37px', // 9 49.37px
-  '114px', // 10 114px
+  '18px', // 18px 0
+  '24px', // 24px 1
+  '27px', // 27px 2
+  '36px', // 36px 3
+  '39px', // 39px 4
+  '41.14px', // 41.14px 5
+  '42px', // 42px 6
+  '45px', // 45px 7
+  '46.77px', // 46.77px 8
+  '49.37px', // 49.37px 9
+  '114px', // 114px 10
 ];
 
 const fontWeights: IFontWeights = {
@@ -146,6 +155,7 @@ export const darkTheme: ITheme = {
   lineHeights,
   fontWeights,
   borderRadiuses,
+  borderWidths,
   zIndexes,
   durations,
 };

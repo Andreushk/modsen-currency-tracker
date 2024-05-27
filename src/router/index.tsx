@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { PageLayout } from '@/components';
-import AppRoutes from '@/constants/routes';
+import { Routes as AppRoutes } from '@/constants/routes';
 import { BankCard, Contacts, Home, Timeline } from '@/pages';
 
 const Router: React.FC = () => (

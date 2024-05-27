@@ -8,6 +8,7 @@ export interface IPalette {
     primary: string;
     secondary: string;
     context: string;
+    accent: string;
     links: string;
   };
   borders: string;
@@ -21,10 +22,10 @@ export interface IBreakpoints {
   tabletS: '768px';
   tabletM: '885px';
   laptopS: '1000px';
-  laptopM: '1200px';
-  desktopS: '1400px';
-  desktopM: '1600px';
-  desktopL: '1800px';
+  laptopM: '1100px';
+  desktopS: '1200px';
+  desktopM: '1300px';
+  desktopL: '1400px';
 }
 
 export interface IFontWeights {
@@ -48,6 +49,7 @@ export interface ITheme {
   fontSizes: string[];
   lineHeights: string[];
   borderRadiuses: string[];
+  borderWidths: string[];
   zIndexes: string[];
   fontWeights: IFontWeights;
   durations: IDurations;

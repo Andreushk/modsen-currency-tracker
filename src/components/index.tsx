@@ -1,3 +1,9 @@
+export { default as BurgerMenuButton } from './common/BurgerMenuButton';
+export { default as Logo } from './common/Logo';
+export { default as NavigationLink } from './common/NavigationLink';
+export { default as Switch } from './common/Switch';
 export { default as Footer } from './layout/Footer';
 export { default as Header } from './layout/Header';
+export { default as Overlay } from './layout/Overlay';
 export { default as PageLayout } from './layout/PageLayout';
+export { default as PortalToBody } from './layout/PortalToBody';
