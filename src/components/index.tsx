@@ -1,11 +1,15 @@
 export { default as BurgerMenuButton } from './common/BurgerMenuButton';
 export { default as Currency } from './common/Currency';
+export { default as CurrencyIcon } from './common/CurrencyIcon';
+export { default as CurrencyIconPlaceholder } from './common/CurrencyIconPlaceholder';
 export { default as LastUpdated } from './common/LastUpdated';
 export { default as LoadingCurrency } from './common/LoadingCurrency';
 export { default as LoadingShimmer } from './common/LoadingShimmer';
 export { default as Logo } from './common/Logo';
+export { default as ModalWindow } from './common/ModalWindow';
 export { default as NavigationLink } from './common/NavigationLink';
 export { default as Paragraph } from './common/Paragraph';
+export { default as Select } from './common/Select';
 export { default as Switch } from './common/Switch';
 export { default as Title } from './common/Title';
 export { default as CurrenciesGrid } from './layout/CurrenciesGrid';

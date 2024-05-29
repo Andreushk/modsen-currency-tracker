@@ -11,7 +11,7 @@ import LibraIcon from '@/assets/icons/libra-icon.svg';
 import ArgentinePesoIcon from '@/assets/icons/peso-argentino-icon.svg';
 import YuanIcon from '@/assets/icons/won-icon.svg';
 import YenIcon from '@/assets/icons/yen-icon.svg';
-import { AppCurrencyCodesType, AppStocksType } from '@/types/api/currencyApi/currencies';
+import { AppCurrencyCodesType, AppStocksType } from '@/types/api/currencies';
 
 type IconMapType = {
   [key in AppCurrencyCodesType | AppStocksType]: VFC<SVGProps<SVGSVGElement>>;

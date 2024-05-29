@@ -1,6 +1,7 @@
-import { AppCurrencyCodesType } from '@/types/api/currencyApi/currencies';
+import { AppCurrencyCodesType } from '@/types/api/currencies';
 
-export const BASE_CURRENCY = 'USD';
+export const BASE_CURRENCY: AppCurrencyCodesType = 'USD';
+export const DECIMAL_PLACES: number = 3;
 
 export const currencies: readonly AppCurrencyCodesType[] = [
   'USD',

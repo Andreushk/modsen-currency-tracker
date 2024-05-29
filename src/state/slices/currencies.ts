@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { ICurrencyExchangeData } from '@/types/api/currencyApi/currencies';
+import { ICurrencyExchangeData } from '@/types/api/currencies';
 
 export interface ICurrenciesState {
   currencies: ICurrencyExchangeData[];

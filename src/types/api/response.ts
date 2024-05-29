@@ -1,10 +1,10 @@
 import { ICurrencyExchangeData } from './currencies';
 
-interface ICurrenciesWithExchangeRatesResponse {
+interface ICurrencyApiResponse {
   meta: {
     last_updated_at: string;
   };
   data: ICurrencyExchangeData[];
 }
 
-export default ICurrenciesWithExchangeRatesResponse;
+export default ICurrencyApiResponse;

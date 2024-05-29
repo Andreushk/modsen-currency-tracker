@@ -2,27 +2,29 @@ import { AxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { CurrenciesGrid, Currency, LastUpdated, LoadingCurrency, SectionError } from '@/components';
-import { currencies as CURRENCIES_ARRAY } from '@/constants/currencies';
+import { LastUpdated, SectionError } from '@/components';
+import useDisableBodyScroll from '@/hooks/useDisableBodyScroll';
 import { addCurrencies, ICurrenciesState } from '@/state/slices/currencies';
 import { RootState } from '@/state/store';
+import { AppCurrencyCodesType } from '@/types/api/currencies';
 import getCurrenciesWithExchangeRates from '@/utils/api/getCurrenciesWithExchangeRates';
 
-import STOCKS_OPTIONS from './options';
+import Currencies from './Currencies';
+import Loading from './Loading';
+import Modal from './Modal';
 import StyledSection from './styled';
 
-const STOCKS_TITLE = 'Stocks';
-const QUOTES_TITLE = 'Quotes';
-
 const CurrenciesSection: React.FC = () => {
-  const currencies = useSelector((state: RootState) => state.currencies);
-  const [isLoading, setIsLoading] = useState<boolean>(currencies.currencies.length === 0);
+  const currenciesData = useSelector((state: RootState) => state.currencies);
+  const [isLoading, setIsLoading] = useState<boolean>(currenciesData.currencies.length === 0);
   const [error, setError] = useState<string | null>(null);
+  const [currencyCode, setCurrencyCode] = useState<AppCurrencyCodesType | null>(null);
 
+  useDisableBodyScroll(Boolean(currencyCode));
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (currencies.currencies.length > 0) {
+    if (currenciesData.currencies.length > 0) {
       return;
     }
 
@@ -40,43 +42,26 @@ const CurrenciesSection: React.FC = () => {
     };
 
     fetchData();
-  }, [currencies, dispatch]);
+  }, [currenciesData, dispatch]);
+
+  const handleClickedCurrency = (currencyCode: AppCurrencyCodesType): void => {
+    setCurrencyCode(currencyCode);
+  };
+
+  const handleModalClose = (): void => {
+    setCurrencyCode(null);
+  };
 
   if (error) {
     return <SectionError message={error} />;
   }
 
-  if (isLoading) {
-    return (
-      <StyledSection>
-        <LastUpdated isLoading={isLoading} lastUpdated={currencies.lastUpdated} />
-        <CurrenciesGrid title={STOCKS_TITLE}>
-          {STOCKS_OPTIONS.map(({ code }) => (
-            <LoadingCurrency key={code} />
-          ))}
-        </CurrenciesGrid>
-        <CurrenciesGrid title={QUOTES_TITLE}>
-          {CURRENCIES_ARRAY.map((code) => (
-            <LoadingCurrency key={code} />
-          ))}
-        </CurrenciesGrid>
-      </StyledSection>
-    );
-  }
-
   return (
     <StyledSection>
-      <LastUpdated isLoading={isLoading} lastUpdated={currencies.lastUpdated} />
-      <CurrenciesGrid title={STOCKS_TITLE}>
-        {STOCKS_OPTIONS.map(({ title, value, code }) => (
-          <Currency key={code} title={title} value={value} code={code} />
-        ))}
-      </CurrenciesGrid>
-      <CurrenciesGrid title={QUOTES_TITLE}>
-        {currencies.currencies.map(({ value, code }) => (
-          <Currency key={code} title={code} value={String(value)} code={code} $isClickable />
-        ))}
-      </CurrenciesGrid>
+      <LastUpdated isLoading={isLoading} lastUpdated={currenciesData.lastUpdated} />
+      {isLoading && <Loading />}
+      {!isLoading && <Currencies currenciesData={currenciesData} onClick={handleClickedCurrency} />}
+      {currencyCode && <Modal selectedCurrencyCode={currencyCode} onClose={handleModalClose} />}
     </StyledSection>
   );
 };

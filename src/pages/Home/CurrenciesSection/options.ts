@@ -1,4 +1,4 @@
-import { AppStocksType } from '@/types/api/currencyApi/currencies';
+import { AppStocksType } from '@/types/api/currencies';
 
 interface IStocksOptions {
   title: string;

@@ -1,5 +1,5 @@
 import iconMap from '@/constants/currenciesIconsMap';
-import { AppCurrencyCodesType, AppStocksType } from '@/types/api/currencyApi/currencies';
+import { AppCurrencyCodesType, AppStocksType } from '@/types/api/currencies';
 
 import StyledIconContainer from './styled';
 
@@ -7,14 +7,14 @@ interface IComponentProps {
   code: AppCurrencyCodesType | AppStocksType;
 }
 
-const Icon: React.FC<IComponentProps> = ({ code }) => {
-  const IconComponent = iconMap[code];
+const CurrencyIcon: React.FC<IComponentProps> = ({ code }) => {
+  const Icon = iconMap[code];
 
   return (
     <StyledIconContainer data-testid="currency-icon">
-      <IconComponent />
+      <Icon />
     </StyledIconContainer>
   );
 };
 
-export default Icon;
+export default CurrencyIcon;
