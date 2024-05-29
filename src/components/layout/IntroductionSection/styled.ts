@@ -10,6 +10,7 @@ const StyledSection = styled.section`
   padding-bottom: ${({ theme }) => theme.spaces[11]};
   padding-right: ${({ theme }) => theme.spaces[12]};
   padding-left: ${({ theme }) => theme.spaces[12]};
+  margin-bottom: ${({ theme }) => theme.spaces[11]};
   background: rgb(3, 3, 4);
   background: linear-gradient(
     90deg,

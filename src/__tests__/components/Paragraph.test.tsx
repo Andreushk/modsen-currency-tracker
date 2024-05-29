@@ -1,0 +1,16 @@
+import { render } from '@testing-library/react';
+
+import { Paragraph } from '@/components';
+import withTheme from '@/utils/tests/themeProvider';
+
+const TEST_PARAGRAPH_VALUE = 'Test value';
+
+describe('Title component', () => {
+  it('Renders correctly', () => {
+    const { getByText } = render(withTheme(<Paragraph>{TEST_PARAGRAPH_VALUE}</Paragraph>));
+
+    const paragraph = getByText(TEST_PARAGRAPH_VALUE);
+
+    expect(paragraph).toBeInTheDocument();
+  });
+});
