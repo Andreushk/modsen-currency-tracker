@@ -8,7 +8,6 @@ async function getExchangeRate(
   baseCurrency: AppCurrencyCodesType,
   selectedCurrency: AppCurrencyCodesType,
 ): Promise<number> {
-  return Math.random();
   const response = await makeApiRequest(baseCurrency, [selectedCurrency]);
 
   if (response.data.length === 0) {

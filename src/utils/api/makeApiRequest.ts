@@ -17,7 +17,7 @@ async function makeApiRequest(
 
   const response: AxiosResponse<ICurrencyApiResponse> = await axios.get(requestURL, {
     params: {
-      apikey: process.env.REACT_APP_CURRENCY_AP,
+      apikey: process.env.REACT_APP_CURRENCY_API,
       base_currency: baseCurrency,
       currencies: interestingCurrencies.join(','),
     },
