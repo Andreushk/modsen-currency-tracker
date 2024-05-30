@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-import gerMediaQuery from '@/utils/media/gerMediaQuery';
+import getMediaQuery from '@/utils/media/getMediaQuery';
 
 export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spaces[2]};
 
-  @media ${gerMediaQuery('mobileL')} {
+  @media ${getMediaQuery('mobileL')} {
     gap: ${({ theme }) => theme.spaces[5]};
     margin-bottom: ${({ theme }) => theme.spaces[3]};
   }
@@ -35,7 +35,7 @@ export const StyledTitleContainer = styled.div`
     margin-top: -${({ theme }) => theme.spaces[4]};
   }
 
-  @media ${gerMediaQuery('desktopM')} {
+  @media ${getMediaQuery('desktopM')} {
     & h1:first-of-type,
     h1:last-of-type {
       font-size: ${({ theme }) => theme.fontSizes[11]};
@@ -44,11 +44,11 @@ export const StyledTitleContainer = styled.div`
     }
   }
 
-  @media ${gerMediaQuery('tabletS')} {
+  @media ${getMediaQuery('tabletS')} {
     margin-right: 0;
   }
 
-  @media ${gerMediaQuery('mobileL')} {
+  @media ${getMediaQuery('mobileL')} {
     & h1:first-of-type,
     h1:last-of-type {
       font-size: ${({ theme }) => theme.fontSizes[7]};
@@ -67,17 +67,17 @@ export const StyledDescription = styled.p`
   margin-left: auto;
   margin-right: ${({ theme }) => theme.spaces[2]};
 
-  @media ${gerMediaQuery('desktopM')} {
+  @media ${getMediaQuery('desktopM')} {
     font-size: ${({ theme }) => theme.fontSizes[2]};
     line-height: ${({ theme }) => theme.lineHeights[1]};
   }
 
-  @media ${gerMediaQuery('tabletS')} {
+  @media ${getMediaQuery('tabletS')} {
     margin-right: 0;
     text-align: right;
   }
 
-  @media ${gerMediaQuery('mobileL')} {
+  @media ${getMediaQuery('mobileL')} {
     font-size: ${({ theme }) => theme.fontSizes[1]};
     line-height: ${({ theme }) => theme.lineHeights[0]};
     text-align: center;

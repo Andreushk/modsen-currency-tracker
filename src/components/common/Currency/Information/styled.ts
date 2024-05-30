@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import gerMediaQuery from '@/utils/media/gerMediaQuery';
+import getMediaQuery from '@/utils/media/getMediaQuery';
 
 export const StyledContainer = styled.div`
   white-space: nowrap;
@@ -17,12 +17,12 @@ export const StyledCurrencyTitle = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
 
-  @media ${gerMediaQuery('laptopM')} {
+  @media ${getMediaQuery('laptopM')} {
     font-size: ${({ theme }) => theme.fontSizes[7]};
     line-height: ${({ theme }) => theme.lineHeights[3]};
   }
 
-  @media ${gerMediaQuery('tabletS')} {
+  @media ${getMediaQuery('tabletS')} {
     font-size: ${({ theme }) => theme.fontSizes[4]};
     line-height: ${({ theme }) => theme.lineHeights[3]};
   }
@@ -34,12 +34,12 @@ export const StyledCurrencyValue = styled.span`
   line-height: ${({ theme }) => theme.lineHeights[5]};
   color: #a7b2c3;
 
-  @media ${gerMediaQuery('laptopM')} {
+  @media ${getMediaQuery('laptopM')} {
     font-size: ${({ theme }) => theme.fontSizes[3]};
     line-height: ${({ theme }) => theme.lineHeights[1]};
   }
 
-  @media ${gerMediaQuery('tabletS')} {
+  @media ${getMediaQuery('tabletS')} {
     font-size: ${({ theme }) => theme.fontSizes[2]};
     line-height: ${({ theme }) => theme.lineHeights[0]};
   }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import gerMediaQuery from '@/utils/media/gerMediaQuery';
+import getMediaQuery from '@/utils/media/getMediaQuery';
 
 const StyledIconContainer = styled.div`
   flex: 0 0 ${({ theme }) => theme.widths[6]};
@@ -12,7 +12,7 @@ const StyledIconContainer = styled.div`
     height: 100%;
   }
 
-  @media ${gerMediaQuery('tabletS')} {
+  @media ${getMediaQuery('tabletS')} {
     flex: 0 0 ${({ theme }) => theme.widths[5]};
     width: ${({ theme }) => theme.widths[5]};
     height: ${({ theme }) => theme.widths[5]};

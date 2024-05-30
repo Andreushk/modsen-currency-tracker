@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import gerMediaQuery from '@/utils/media/gerMediaQuery';
+import getMediaQuery from '@/utils/media/getMediaQuery';
 
 export interface IStyleProps {
   $isClickable?: boolean;
@@ -17,7 +17,7 @@ export const StyledContainer = styled.div<IStyleProps>`
   border-radius: ${({ theme }) => theme.borderRadiuses[0]};
   background: ${({ theme }) => theme.colors.bg.blocks};
 
-  @media ${gerMediaQuery('laptopM')} {
+  @media ${getMediaQuery('laptopM')} {
     gap: ${({ theme }) => theme.spaces[3]};
     min-height: fit-content;
     padding: ${({ theme }) => theme.spaces[5]};

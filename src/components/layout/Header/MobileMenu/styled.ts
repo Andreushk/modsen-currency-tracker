@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import gerMediaQuery from '@/utils/media/gerMediaQuery';
+import getMediaQuery from '@/utils/media/getMediaQuery';
 
 interface IStyleProps {
   $isVisible: boolean;
@@ -19,7 +19,7 @@ const StyledContainer = styled.div<IStyleProps>`
   transform: ${({ $isVisible }) => ($isVisible ? 'translateX(0)' : 'translateX(100%)')};
   will-change: transform;
 
-  @media ${gerMediaQuery('mobileM')} {
+  @media ${getMediaQuery('mobileM')} {
     width: 65%;
     padding: ${({ theme }) => theme.spaces[8]};
   }

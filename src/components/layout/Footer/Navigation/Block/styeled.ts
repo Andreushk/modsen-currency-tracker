@@ -4,17 +4,13 @@ import getMediaQuery from '@/utils/media/getMediaQuery';
 
 const StyledContainer = styled.div`
   display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spaces[4]};
-  width: fit-content;
-  margin: 0 auto;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spaces[3]};
+  margin-top: ${({ theme }) => theme.spaces[8]};
 
-  @media ${getMediaQuery('laptopM')} {
-    gap: ${({ theme }) => theme.spaces[3]};
-  }
-
-  @media ${getMediaQuery('mobileL')} {
+  @media ${getMediaQuery('desktopS')} {
     gap: ${({ theme }) => theme.spaces[2]};
+    margin-top: ${({ theme }) => theme.spaces[4]};
   }
 `;
 

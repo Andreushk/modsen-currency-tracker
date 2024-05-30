@@ -1,15 +1,21 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import gerMediaQuery from '@/utils/media/gerMediaQuery';
+import getMediaQuery from '@/utils/media/getMediaQuery';
 
-const StyledNavigationLink = styled(Link)`
+export interface IStyleProps {
+  $isDarked?: boolean;
+}
+
+const StyledNavigationLink = styled(Link)<IStyleProps>`
   font-size: ${({ theme }) => theme.fontSizes[3]};
   font-weight: ${({ theme }) => theme.fontWeights.light};
   line-height: ${({ theme }) => theme.lineHeights[5]};
-  color: ${({ theme }) => theme.colors.text.primary};
   text-decoration: none;
   transition: color ${({ theme }) => theme.durations.animations}ms ease;
+
+  color: ${({ theme, $isDarked }) =>
+    $isDarked ? theme.colors.text.links : theme.colors.text.primary};
 
   &:focus {
     color: ${({ theme }) => theme.colors.text.accent};
@@ -21,7 +27,7 @@ const StyledNavigationLink = styled(Link)`
     }
   }
 
-  @media ${gerMediaQuery('laptopS')} {
+  @media ${getMediaQuery('laptopS')} {
     font-size: ${({ theme }) => theme.fontSizes[2]};
     line-height: ${({ theme }) => theme.lineHeights[2]};
   }

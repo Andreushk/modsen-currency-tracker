@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import gerMediaQuery from '@/utils/media/gerMediaQuery';
+import getMediaQuery from '@/utils/media/getMediaQuery';
 
 export const StyledSection = styled.section`
   max-width: ${({ theme }) => theme.widths[10]};
@@ -8,12 +8,12 @@ export const StyledSection = styled.section`
   padding-right: ${({ theme }) => theme.spaces[15]};
   padding-left: ${({ theme }) => theme.spaces[15]};
 
-  @media ${gerMediaQuery('laptopM')} {
+  @media ${getMediaQuery('laptopM')} {
     padding-right: ${({ theme }) => theme.spaces[12]};
     padding-left: ${({ theme }) => theme.spaces[12]};
   }
 
-  @media ${gerMediaQuery('tabletS')} {
+  @media ${getMediaQuery('tabletS')} {
     padding-right: ${({ theme }) => theme.spaces[7]};
     padding-left: ${({ theme }) => theme.spaces[7]};
   }

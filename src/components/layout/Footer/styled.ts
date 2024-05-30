@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 import getMediaQuery from '@/utils/media/getMediaQuery';
 
-export const StyledHeader = styled.header`
-  padding-right: ${({ theme }) => theme.spaces[15]};
-  padding-left: ${({ theme }) => theme.spaces[15]};
+export const StyledFooter = styled.footer`
+  padding: 105px 96px 40px 96px;
   background-color: ${({ theme }) => theme.colors.bg.main};
 
   @media ${getMediaQuery('laptopM')} {
@@ -23,11 +22,19 @@ export const StyledHeader = styled.header`
   }
 `;
 
-export const StyledHeaderContentContainer = styled.div`
+export const StyledFooterContentContainer = styled.div`
   max-width: ${({ theme }) => theme.widths[10]};
-  height: ${({ theme }) => theme.heights[6]};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 0 auto;
+  display: flex;
+  gap: ${({ theme }) => theme.spaces[15]};
+
+  @media ${getMediaQuery('desktopM')} {
+    gap: unset;
+    justify-content: space-between;
+  }
+
+  @media ${getMediaQuery('desktopS')} {
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spaces[9]};
+  }
 `;

@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-import gerMediaQuery from '@/utils/media/gerMediaQuery';
+import getMediaQuery from '@/utils/media/getMediaQuery';
 
 interface IStyleProps {
   $isLoading: boolean;
@@ -51,12 +51,12 @@ const IndicatorContainer = styled.div<IStyleProps>`
     height: 32%;
   }
 
-  @media ${gerMediaQuery('laptopM')} {
+  @media ${getMediaQuery('laptopM')} {
     width: ${({ theme }) => theme.spaces[6]};
     height: ${({ theme }) => theme.spaces[6]};
   }
 
-  @media ${gerMediaQuery('mobileL')} {
+  @media ${getMediaQuery('mobileL')} {
     width: ${({ theme }) => theme.spaces[5]};
     height: ${({ theme }) => theme.spaces[5]};
   }

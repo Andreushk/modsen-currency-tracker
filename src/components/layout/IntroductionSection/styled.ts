@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import gerMediaQuery from '@/utils/media/gerMediaQuery';
+import getMediaQuery from '@/utils/media/getMediaQuery';
 
 const StyledSection = styled.section`
   display: flex;
@@ -19,14 +19,14 @@ const StyledSection = styled.section`
     rgba(3, 3, 4, 1) 100%
   );
 
-  @media ${gerMediaQuery('desktopM')} {
+  @media ${getMediaQuery('desktopM')} {
     & svg {
       width: 200px;
       height: 210px;
     }
   }
 
-  @media ${gerMediaQuery('tabletS')} {
+  @media ${getMediaQuery('tabletS')} {
     gap: ${({ theme }) => theme.spaces[3]};
     padding-right: ${({ theme }) => theme.spaces[7]};
     padding-left: ${({ theme }) => theme.spaces[7]};
@@ -37,7 +37,7 @@ const StyledSection = styled.section`
     }
   }
 
-  @media ${gerMediaQuery('mobileL')} {
+  @media ${getMediaQuery('mobileL')} {
     flex-direction: column;
     padding: ${({ theme }) => theme.spaces[12]} ${({ theme }) => theme.spaces[7]};
 

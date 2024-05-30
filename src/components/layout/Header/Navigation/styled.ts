@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-import gerMediaQuery from '@/utils/media/gerMediaQuery';
+import getMediaQuery from '@/utils/media/getMediaQuery';
 
 const StyledNavigation = styled.nav`
   display: flex;
   gap: ${({ theme }) => theme.spaces[16]};
 
-  @media ${gerMediaQuery('desktopM')} {
+  @media ${getMediaQuery('desktopM')} {
     gap: ${({ theme }) => theme.spaces[12]};
   }
 
-  @media ${gerMediaQuery('laptopS')} {
+  @media ${getMediaQuery('laptopS')} {
     gap: ${({ theme }) => theme.spaces[8]};
   }
 `;
