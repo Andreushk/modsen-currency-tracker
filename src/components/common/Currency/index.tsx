@@ -10,12 +10,19 @@ interface IComponentProps extends IStyleProps {
   title: string;
   value: string;
   code: AppCurrencyCodesType | AppStocksType;
+  isWithRounding?: boolean;
 }
 
-const Currency: React.FC<IComponentProps> = ({ title, value, code, $isClickable = false }) => (
+const Currency: React.FC<IComponentProps> = ({
+  title,
+  value,
+  code,
+  isWithRounding = false,
+  $isClickable = false,
+}) => (
   <StyledContainer $isClickable={$isClickable} data-currency-code={$isClickable ? code : null}>
     <CurrencyIcon code={code} />
-    <Information title={title} value={value} />
+    <Information title={title} value={value} isWithRounding={isWithRounding} />
   </StyledContainer>
 );
 

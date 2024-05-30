@@ -31,7 +31,14 @@ const Currencies: React.FC<IComponentProps> = ({ currenciesData, onClick }) => {
       </CurrenciesGrid>
       <CurrenciesGrid title={QUOTES_TITLE} onClick={handleGridClick}>
         {currenciesData.currencies.map(({ value, code }) => (
-          <Currency key={code} title={code} value={String(value)} code={code} $isClickable />
+          <Currency
+            key={code}
+            title={code}
+            value={String(value)}
+            code={code}
+            isWithRounding
+            $isClickable
+          />
         ))}
       </CurrenciesGrid>
     </>
