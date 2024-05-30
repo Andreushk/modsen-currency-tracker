@@ -1,8 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import getMediaQuery from '@/utils/media/getMediaQuery';
 
-const StyledSection = styled.section`
+interface IStyleProps {
+  $isDarkMode: boolean;
+}
+
+const StyledSection = styled.section<IStyleProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,13 +15,24 @@ const StyledSection = styled.section`
   padding-right: ${({ theme }) => theme.spaces[12]};
   padding-left: ${({ theme }) => theme.spaces[12]};
   margin-bottom: ${({ theme }) => theme.spaces[11]};
-  background: rgb(3, 3, 4);
-  background: linear-gradient(
-    90deg,
-    rgba(3, 3, 4, 1) 0%,
-    rgba(0, 188, 79, 0.2) 51%,
-    rgba(3, 3, 4, 1) 100%
-  );
+
+  ${({ $isDarkMode }) =>
+    $isDarkMode &&
+    css`
+      background: rgb(3, 3, 4);
+      background: linear-gradient(
+        90deg,
+        rgba(3, 3, 4, 1) 0%,
+        rgba(0, 188, 79, 0.2) 51%,
+        rgba(3, 3, 4, 1) 100%
+      );
+    `}
+
+  ${({ $isDarkMode }) =>
+    !$isDarkMode &&
+    css`
+      background-color: ${({ theme }) => theme.colors.bg.blocks};
+    `}
 
   @media ${getMediaQuery('desktopM')} {
     & svg {

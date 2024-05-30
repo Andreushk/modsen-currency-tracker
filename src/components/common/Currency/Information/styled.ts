@@ -12,7 +12,7 @@ export const StyledCurrencyTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes[11]};
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   line-height: ${({ theme }) => theme.lineHeights[9]};
-  color: #d9d9d9;
+  color: ${({ theme }) => theme.colors.text.secondary};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

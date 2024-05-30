@@ -13,7 +13,7 @@ export const StyledDivider = styled.div`
   margin-bottom: ${({ theme }) => theme.spaces[9]};
   width: 41.67%;
   height: ${({ theme }) => theme.heights[0]};
-  background-color: #474747;
+  background-color: ${({ theme }) => theme.colors.borders};
 
   @media ${getMediaQuery('desktopS')} {
     width: 46%;

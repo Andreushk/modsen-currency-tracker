@@ -20,7 +20,7 @@ const darkColors: IPalette = {
 const lightColors: IPalette = {
   bg: {
     main: '#F5F5F5',
-    blocks: '#FDFDFD',
+    blocks: '#e9ecef',
     input: '#E0E0E0',
   },
   text: {
@@ -28,7 +28,7 @@ const lightColors: IPalette = {
     secondary: '#616161',
     context: '#8E8E8E',
     accent: '#00bc4f',
-    links: '#2196F3',
+    links: '#adb5bd',
   },
   borders: '#CBCBCB',
   icons: '#5C5C5C',
