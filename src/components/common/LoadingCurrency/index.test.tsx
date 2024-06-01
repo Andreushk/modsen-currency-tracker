@@ -7,7 +7,6 @@ describe('LoadingCurrency component', () => {
   it('Renders correctly', () => {
     const { getAllByTestId } = render(withTheme(<LoadingCurrency />));
 
-    const shimmer = getAllByTestId('loading-shimmer');
-    expect(shimmer).toHaveLength(3);
+    expect(getAllByTestId('loading-shimmer')).toHaveLength(3);
   });
 });

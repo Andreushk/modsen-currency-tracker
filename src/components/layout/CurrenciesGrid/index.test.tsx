@@ -16,10 +16,7 @@ describe('CurrenciesGrid component', () => {
       ),
     );
 
-    const TITLE = getByText(TEST_TITLE);
-    const CHILD = getByText(TEST_CHILD_TEXT);
-
-    expect(TITLE).toBeInTheDocument();
-    expect(CHILD).toBeInTheDocument();
+    expect(getByText(TEST_TITLE)).toBeInTheDocument();
+    expect(getByText(TEST_CHILD_TEXT)).toBeInTheDocument();
   });
 });

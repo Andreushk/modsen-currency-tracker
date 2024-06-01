@@ -12,11 +12,8 @@ describe('ModalWindow component', () => {
       withTheme(<ModalWindow title={TEST_TITLE}>{TEST_CHILDREN}</ModalWindow>),
     );
 
-    const title = getByText(TEST_TITLE);
-    const children = getByText(TEST_CHILDREN);
-
-    expect(title).toBeInTheDocument();
-    expect(children).toBeInTheDocument();
+    expect(getByText(TEST_TITLE)).toBeInTheDocument();
+    expect(getByText(TEST_CHILDREN)).toBeInTheDocument();
   });
 
   it('Stops click propagation', () => {

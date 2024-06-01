@@ -1,5 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
-import React from 'react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { Overlay } from '@/components';
 import withTheme from '@/utils/helpers/themeProvider';
@@ -18,8 +17,7 @@ describe('Overlay component', () => {
       ),
     );
 
-    const children = getByText(TEST_CHILDREN_TEXT);
-    expect(children).toBeInTheDocument();
+    expect(getByText(TEST_CHILDREN_TEXT)).toBeInTheDocument();
   });
 
   it('Calls callback', async () => {
@@ -31,11 +29,7 @@ describe('Overlay component', () => {
       ),
     );
 
-    const overlay = getByTestId('overlay');
-    fireEvent.click(overlay);
-
-    await waitFor(() => {
-      expect(mockCB).toHaveBeenCalled();
-    });
+    fireEvent.click(getByTestId('overlay'));
+    expect(mockCB).toHaveBeenCalled();
   });
 });

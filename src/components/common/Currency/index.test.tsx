@@ -14,12 +14,8 @@ describe('LastUpdated component', () => {
       withTheme(<Currency value={TEST_VALUE} code={TEST_CODE} />),
     );
 
-    const icon = getByTestId(TEST_ICONID);
-    const title = getByText(TEST_TITLE);
-    const value = getByText(TEST_VALUE);
-
-    expect(title).toBeInTheDocument();
-    expect(value).toBeInTheDocument();
-    expect(icon).toBeInTheDocument();
+    expect(getByText(TEST_TITLE)).toBeInTheDocument();
+    expect(getByText(TEST_VALUE)).toBeInTheDocument();
+    expect(getByTestId(TEST_ICONID)).toBeInTheDocument();
   });
 });

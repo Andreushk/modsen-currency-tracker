@@ -30,7 +30,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <StyledHeader>
+    <StyledHeader data-testid="header">
       <StyledHeaderContentContainer>
         <Logo size={40} withNavigation />
         {isWideScreen && !isMobileMenuOpen && <Navigation />}

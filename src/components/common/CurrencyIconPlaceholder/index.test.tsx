@@ -9,7 +9,6 @@ describe('CurrencyIconPlaceholder component', () => {
   it('Renders correctly', () => {
     const { getByTestId } = render(withTheme(<CurrencyIconPlaceholder />));
 
-    const currencyIconPlaceholder = getByTestId(TEST_CURRENCY_ICON_PLACEHOLDER_ID);
-    expect(currencyIconPlaceholder).toBeInTheDocument();
+    expect(getByTestId(TEST_CURRENCY_ICON_PLACEHOLDER_ID)).toBeInTheDocument();
   });
 });

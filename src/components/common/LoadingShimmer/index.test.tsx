@@ -7,7 +7,6 @@ describe('LoadingShimmer component', () => {
   it('Renders correctly', () => {
     const { getByTestId } = render(withTheme(<LoadingShimmer />));
 
-    const shimmer = getByTestId('loading-shimmer');
-    expect(shimmer).toBeInTheDocument();
+    expect(getByTestId('loading-shimmer')).toBeInTheDocument();
   });
 });

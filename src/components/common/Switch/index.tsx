@@ -6,7 +6,7 @@ interface IComponentProps {
 }
 
 const Switch: React.FC<IComponentProps> = ({ isOn, onClick }) => (
-  <StyledButton type="button" onClick={onClick}>
+  <StyledButton type="button" onClick={onClick} data-testid="switch">
     <StyledSpan $isOn={isOn} />
   </StyledButton>
 );

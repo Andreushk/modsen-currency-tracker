@@ -31,8 +31,8 @@ describe('NavigationLink component', () => {
         </MemoryRouter>,
       ),
     );
-    const linkElement = getByText('Contact');
-    fireEvent.click(linkElement);
+
+    fireEvent.click(getByText('Contact'));
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });
 });

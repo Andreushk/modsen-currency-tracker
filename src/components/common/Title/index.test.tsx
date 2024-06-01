@@ -9,8 +9,6 @@ describe('Title component', () => {
   it('Renders correctly', () => {
     const { getByText } = render(withTheme(<Title>{TEST_TITLE_VALUE}</Title>));
 
-    const title = getByText(TEST_TITLE_VALUE);
-
-    expect(title).toBeInTheDocument();
+    expect(getByText(TEST_TITLE_VALUE)).toBeInTheDocument();
   });
 });

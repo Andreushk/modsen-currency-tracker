@@ -9,8 +9,6 @@ describe('Title component', () => {
   it('Renders correctly', () => {
     const { getByText } = render(withTheme(<Paragraph>{TEST_PARAGRAPH_VALUE}</Paragraph>));
 
-    const paragraph = getByText(TEST_PARAGRAPH_VALUE);
-
-    expect(paragraph).toBeInTheDocument();
+    expect(getByText(TEST_PARAGRAPH_VALUE)).toBeInTheDocument();
   });
 });

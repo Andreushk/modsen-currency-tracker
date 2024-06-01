@@ -22,8 +22,8 @@ describe('Logo component', () => {
         </MemoryRouter>,
       ),
     );
-    const logoContainer = getByTestId('logo');
-    fireEvent.click(logoContainer);
+
+    fireEvent.click(getByTestId('logo'));
     expect(mockNavigate).toHaveBeenCalledWith(Routes.BASIC);
   });
 });

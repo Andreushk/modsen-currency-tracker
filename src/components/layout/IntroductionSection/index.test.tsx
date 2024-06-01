@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-import React from 'react';
 import { Provider } from 'react-redux';
 
 import { IntroductionSection } from '@/components';
@@ -21,10 +20,7 @@ describe('IntroductionSection component', () => {
       ),
     );
 
-    const logo = getByTestId('logo');
-    const text = getByTestId('introduction');
-
-    expect(logo).toBeInTheDocument();
-    expect(text).toBeInTheDocument();
+    expect(getByTestId('logo')).toBeInTheDocument();
+    expect(getByTestId('introduction')).toBeInTheDocument();
   });
 });

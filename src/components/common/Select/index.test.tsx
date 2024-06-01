@@ -30,8 +30,9 @@ describe('Select component', () => {
       withTheme(<Select selectOptions={TEST_SELECT_OPTION} changeCB={mockChangeCB} />),
     );
 
-    const select = getByTestId(SELECT_TESTID);
-    fireEvent.change(select, { target: { value: TEST_SELECT_OPTION[0].value } });
+    fireEvent.change(getByTestId(SELECT_TESTID), {
+      target: { value: TEST_SELECT_OPTION[0].value },
+    });
 
     expect(mockChangeCB).toHaveBeenCalled();
   });

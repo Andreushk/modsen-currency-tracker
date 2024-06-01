@@ -14,11 +14,8 @@ describe('LastUpdated component', () => {
       withTheme(<LastUpdated isLoading={false} lastUpdated={TEST_ISO} />),
     );
 
-    const time = getByText(TEST_TIME_STRING);
-    const indicator = getByTestId(INDICATOR_TESTID);
-
-    expect(time).toBeInTheDocument();
-    expect(indicator).toBeInTheDocument();
+    expect(getByText(TEST_TIME_STRING)).toBeInTheDocument();
+    expect(getByTestId(INDICATOR_TESTID)).toBeInTheDocument();
   });
 
   it('Renders in loading mode correctly', () => {
@@ -26,10 +23,7 @@ describe('LastUpdated component', () => {
       withTheme(<LastUpdated isLoading lastUpdated={null} />),
     );
 
-    const loading = getByText(INDICATOR_LOADING_TEXT);
-    const indicator = getByTestId(INDICATOR_TESTID);
-
-    expect(loading).toBeInTheDocument();
-    expect(indicator).toBeInTheDocument();
+    expect(getByText(INDICATOR_LOADING_TEXT)).toBeInTheDocument();
+    expect(getByTestId(INDICATOR_TESTID)).toBeInTheDocument();
   });
 });
