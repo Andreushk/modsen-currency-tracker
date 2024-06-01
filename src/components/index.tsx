@@ -1,4 +1,5 @@
 export { default as BurgerMenuButton } from './common/BurgerMenuButton';
+export { default as Button } from './common/Button';
 export { default as Currency } from './common/Currency';
 export { default as CurrencyIcon } from './common/CurrencyIcon';
 export { default as CurrencyIconPlaceholder } from './common/CurrencyIconPlaceholder';
@@ -12,6 +13,7 @@ export { default as Paragraph } from './common/Paragraph';
 export { default as Select } from './common/Select';
 export { default as Switch } from './common/Switch';
 export { default as Title } from './common/Title';
+export { default as Toast } from './common/Toast';
 export { default as CurrenciesGrid } from './layout/CurrenciesGrid';
 export { default as Footer } from './layout/Footer';
 export { default as Header } from './layout/Header';

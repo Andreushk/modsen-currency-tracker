@@ -38,6 +38,4 @@ function roundExchangeRate(exchangeRate: number): string {
   return roundedNum.toFixed(2);
 }
 
-console.log(roundExchangeRate(0.556));
-
 export default roundExchangeRate;

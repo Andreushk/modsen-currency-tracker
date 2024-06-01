@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import { CurrencyIcon, CurrencyIconPlaceholder, Paragraph, Select } from '@/components';
+import { SELECT_OPTION } from '@/constants/currencies';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
 
-import SELECT_OPTION from './options';
 import { StyledContainer, StyledCurrencyCodeContainer } from './styled';
 
 interface IComponentProps {

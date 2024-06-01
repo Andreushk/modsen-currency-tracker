@@ -4,7 +4,7 @@ import StyledOverlay from './styled';
 
 interface IComponentProps {
   children: React.ReactNode;
-  clickCB: () => void;
+  clickCB?: () => void;
 }
 
 const Overlay: React.FC<IComponentProps> = ({ children, clickCB }) => {

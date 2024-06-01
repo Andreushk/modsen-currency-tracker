@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import getMediaQuery from '@/utils/media/getMediaQuery';
+
 const StyledModalWindowContainer = styled.div`
   position: fixed;
   top: 50%;
@@ -10,6 +12,10 @@ const StyledModalWindowContainer = styled.div`
   padding: ${({ theme }) => theme.spaces[7]};
   background-color: ${({ theme }) => theme.colors.bg.blocks};
   border-radius: ${({ theme }) => theme.borderRadiuses[0]};
+
+  @media ${getMediaQuery('mobileM')} {
+    padding: ${({ theme }) => theme.spaces[5]} ${({ theme }) => theme.spaces[3]};
+  }
 `;
 
 export default StyledModalWindowContainer;

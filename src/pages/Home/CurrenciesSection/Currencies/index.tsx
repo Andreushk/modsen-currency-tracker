@@ -25,20 +25,13 @@ const Currencies: React.FC<IComponentProps> = ({ currenciesData, onClick }) => {
   return (
     <>
       <CurrenciesGrid title={STOCKS_TITLE}>
-        {STOCKS_OPTIONS.map(({ title, value, code }) => (
-          <Currency key={code} title={title} value={value} code={code} />
+        {STOCKS_OPTIONS.map(({ value, code }) => (
+          <Currency key={code} value={value} code={code} />
         ))}
       </CurrenciesGrid>
       <CurrenciesGrid title={QUOTES_TITLE} onClick={handleGridClick}>
         {currenciesData.currencies.map(({ value, code }) => (
-          <Currency
-            key={code}
-            title={code}
-            value={String(value)}
-            code={code}
-            isWithRounding
-            $isClickable
-          />
+          <Currency key={code} value={String(value)} code={code} isWithRounding $isClickable />
         ))}
       </CurrenciesGrid>
     </>
