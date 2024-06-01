@@ -1,7 +1,7 @@
 import { CurrenciesGrid, Currency } from '@/components';
 import { ICurrenciesState } from '@/state/slices/currencies';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
-import getParentDataAttribute from '@/utils/dom/getParentDataAttribute';
+import getParentDataAttribute from '@/utils/helpers/getParentDataAttribute';
 
 import STOCKS_OPTIONS from '../options';
 

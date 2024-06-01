@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { Currency } from '@/components';
-import withTheme from '@/utils/tests/themeProvider';
+import withTheme from '@/utils/helpers/themeProvider';
 
 const TEST_TITLE = 'United States Dollar';
 const TEST_VALUE = '1';

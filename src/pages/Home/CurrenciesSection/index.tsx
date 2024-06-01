@@ -2,12 +2,12 @@ import { AxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import getCurrenciesWithExchangeRates from '@/api/getCurrenciesWithExchangeRates';
 import { LastUpdated, SectionError } from '@/components';
 import useDisableBodyScroll from '@/hooks/useDisableBodyScroll';
 import { addCurrencies, ICurrenciesState } from '@/state/slices/currencies';
 import { RootState } from '@/state/store';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
-import getCurrenciesWithExchangeRates from '@/utils/api/getCurrenciesWithExchangeRates';
 
 import Currencies from './Currencies';
 import Loading from './Loading';

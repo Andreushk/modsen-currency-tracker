@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import getMediaQuery from '@/utils/media/getMediaQuery';
+import getMediaQuery from '@/utils/helpers/getMediaQuery';
 
 const StyledSection = styled.section`
   padding-right: ${({ theme }) => theme.spaces[15]};

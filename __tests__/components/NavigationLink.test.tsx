@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { NavigationLink } from '@/components';
 import { Routes } from '@/constants/routes';
-import withTheme from '@/utils/tests/themeProvider';
+import withTheme from '@/utils/helpers/themeProvider';
 
 describe('NavigationLink component', () => {
   test('Renders correctly', () => {

@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import { IntroductionSection } from '@/components';
 import { store } from '@/state/store';
-import withTheme from '@/utils/tests/themeProvider';
+import withTheme from '@/utils/helpers/themeProvider';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

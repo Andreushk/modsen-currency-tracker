@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import getMediaQuery from '@/utils/media/getMediaQuery';
+import getMediaQuery from '@/utils/helpers/getMediaQuery';
 
 const StyledContainer = styled.div`
   flex: 0 0 ${({ theme }) => theme.widths[6]};

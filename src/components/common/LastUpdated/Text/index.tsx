@@ -1,5 +1,5 @@
 import { Title } from '@/components';
-import formatIsoToHours from '@/utils/time/formatIsoToHours';
+import formatIsoToHours from '@/utils/helpers/formatIsoToHours';
 
 const LOADING_TEXT = 'Loading...';
 

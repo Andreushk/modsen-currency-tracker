@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { SectionError } from '@/components';
-import withTheme from '@/utils/tests/themeProvider';
+import withTheme from '@/utils/helpers/themeProvider';
 
 describe('SectionError', () => {
   it('Renders correctly', () => {

@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { CurrenciesGrid } from '@/components';
-import withTheme from '@/utils/tests/themeProvider';
+import withTheme from '@/utils/helpers/themeProvider';
 
 const TEST_TITLE = 'Stocks';
 const TEST_CHILD_TEXT = 'Test child text';

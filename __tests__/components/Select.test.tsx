@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 
 import { Select } from '@/components';
-import withTheme from '@/utils/tests/themeProvider';
+import withTheme from '@/utils/helpers/themeProvider';
 
 const TEST_SELECT_OPTION = [
   { value: 'Test value', displayValue: 'Test value' },

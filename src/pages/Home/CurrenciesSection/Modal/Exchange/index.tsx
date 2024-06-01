@@ -1,9 +1,9 @@
 import { AxiosError } from 'axios';
 import { useState } from 'react';
 
+import getExchangeRate from '@/api/getExchangeRate';
 import { Paragraph } from '@/components';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
-import getExchangeRate from '@/utils/api/getExchangeRate';
 
 import CurrencyItem from './CurrencyItem';
 import ResultBlock from './ResultBlock';

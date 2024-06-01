@@ -3,7 +3,7 @@ import { Component, createRef, ReactNode, RefObject } from 'react';
 import { ModalWindow, Overlay, Paragraph, PortalToBody } from '@/components';
 import { ICurrencyTimeline } from '@/types/chart';
 import generateCurrencyTimeline from '@/utils/chart/generateCurrencyTimeline';
-import getPreviousDates from '@/utils/time/getPreviousDates';
+import getPreviousDates from '@/utils/helpers/getPreviousDates';
 
 import Buttons from './Buttons';
 import InputList from './Inputs';

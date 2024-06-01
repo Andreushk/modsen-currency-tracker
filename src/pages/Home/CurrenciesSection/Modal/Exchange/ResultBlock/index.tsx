@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Paragraph } from '@/components';
-import roundExchangeRate from '@/utils/currency/roundExchangeRate';
+import roundExchangeRate from '@/utils/helpers/roundExchangeRate';
 
 import StyledContainer from './styled';
 

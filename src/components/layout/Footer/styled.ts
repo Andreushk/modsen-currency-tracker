@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import getMediaQuery from '@/utils/media/getMediaQuery';
+import getMediaQuery from '@/utils/helpers/getMediaQuery';
 
 export const StyledFooter = styled.footer`
   padding: 105px 96px 40px 96px;

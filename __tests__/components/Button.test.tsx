@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 
 import { Button } from '@/components';
-import withTheme from '@/utils/tests/themeProvider';
+import withTheme from '@/utils/helpers/themeProvider';
 
 const TEST_BUTTON_VALUE = 'Test button';
 

@@ -1,4 +1,4 @@
-import roundExchangeRate from '@/utils/currency/roundExchangeRate';
+import roundExchangeRate from '@/utils/helpers/roundExchangeRate';
 
 describe('roundExchangeRate function', () => {
   it('Round 1.556 correctly', () => {

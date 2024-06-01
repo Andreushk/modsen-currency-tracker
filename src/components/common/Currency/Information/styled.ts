@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import getMediaQuery from '@/utils/media/getMediaQuery';
+import getMediaQuery from '@/utils/helpers/getMediaQuery';
 
 export const StyledContainer = styled.div`
   white-space: nowrap;

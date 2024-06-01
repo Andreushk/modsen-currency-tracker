@@ -1,12 +1,5 @@
 import { ICurrencyTimeline, IDatasets } from '@/types/chart';
 
-interface ICTX {
-  raw: {
-    o: number;
-    c: number;
-  };
-}
-
 function createDatasets(datesValues: ICurrencyTimeline[]) {
   const data: IDatasets = {
     datasets: [
@@ -24,12 +17,10 @@ function createDatasets(datesValues: ICurrencyTimeline[]) {
             s: [priceOpen, priceClose],
           };
         }),
-        backgroundColor: (ctx: ICTX) => {
-          const {
-            raw: { o, c },
-          } = ctx;
-
-          return c >= o ? `red` : `green`;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        backgroundColor: (ctx: any) => {
+          const { raw } = ctx;
+          return raw.o > raw.c ? 'red' : 'green';
         },
         barPercentage: 1,
         maxBarThickness: 20,

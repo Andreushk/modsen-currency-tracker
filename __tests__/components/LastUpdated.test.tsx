@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { LastUpdated } from '@/components';
-import withTheme from '@/utils/tests/themeProvider';
+import withTheme from '@/utils/helpers/themeProvider';
 
 const TEST_ISO = '2015-05-29T12:00:00Z';
 const TEST_TIME_STRING = 'Last updated at 3:00 PM';

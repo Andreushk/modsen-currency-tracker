@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { Paragraph } from '@/components';
-import withTheme from '@/utils/tests/themeProvider';
+import withTheme from '@/utils/helpers/themeProvider';
 
 const TEST_PARAGRAPH_VALUE = 'Test value';
 

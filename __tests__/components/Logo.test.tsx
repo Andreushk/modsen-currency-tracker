@@ -4,7 +4,7 @@ import { MemoryRouter, useNavigate } from 'react-router-dom';
 
 import { Logo } from '@/components';
 import { Routes } from '@/constants/routes';
-import withTheme from '@/utils/tests/themeProvider';
+import withTheme from '@/utils/helpers/themeProvider';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

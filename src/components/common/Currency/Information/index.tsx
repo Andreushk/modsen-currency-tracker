@@ -1,6 +1,6 @@
 import namesMap from '@/constants/currenciesNamesMap';
 import { AppCurrencyCodesType, AppStocksType } from '@/types/api/currencies';
-import roundExchangeRate from '@/utils/currency/roundExchangeRate';
+import roundExchangeRate from '@/utils/helpers/roundExchangeRate';
 
 import { StyledContainer, StyledCurrencyTitle, StyledCurrencyValue } from './styled';
 
