@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { CurrencyIcon, CurrencyIconPlaceholder, Paragraph, Select } from '@/components';
+import { CurrencyIcon, Paragraph, Select } from '@/components';
 import { SELECT_OPTION } from '@/constants/currencies';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
 
@@ -12,7 +12,7 @@ interface IComponentProps {
 }
 
 const CurrencyItem: React.FC<IComponentProps> = ({ baseCurrencyCode, onSelect }) => {
-  const [selectedCode, setSelectedCode] = useState<AppCurrencyCodesType | null>(null);
+  const [selectedCode, setSelectedCode] = useState<AppCurrencyCodesType>('USD');
 
   const handleSelectedCode = (selectedCode: string) => {
     if (onSelect) {
@@ -26,11 +26,10 @@ const CurrencyItem: React.FC<IComponentProps> = ({ baseCurrencyCode, onSelect })
       {(baseCurrencyCode || selectedCode) && (
         <CurrencyIcon code={baseCurrencyCode || selectedCode!} />
       )}
-      {!baseCurrencyCode && !selectedCode && <CurrencyIconPlaceholder />}
       <StyledCurrencyCodeContainer>
         {baseCurrencyCode && <Paragraph>{baseCurrencyCode}</Paragraph>}
         {!baseCurrencyCode && (
-          <Select selectOptions={SELECT_OPTION} changeCB={handleSelectedCode} />
+          <Select selectOptions={SELECT_OPTION} changeCB={handleSelectedCode} withDefaultValue />
         )}
       </StyledCurrencyCodeContainer>
     </StyledContainer>

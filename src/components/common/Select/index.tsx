@@ -12,16 +12,23 @@ export type SelectOptionType = {
 interface IComponentProps {
   selectOptions: SelectOptionType[];
   changeCB: (selectedValue: string) => void;
+  withDefaultValue?: boolean;
 }
 
-const Select: React.FC<IComponentProps> = ({ selectOptions, changeCB }) => {
+const Select: React.FC<IComponentProps> = ({ selectOptions, changeCB, withDefaultValue }) => {
   const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     changeCB(event.target.value);
   };
 
   return (
     <StyledContainer>
-      <StyledSelect onChange={handleSelect} data-testid="select">
+      <StyledSelect
+        defaultValue={
+          withDefaultValue ? selectOptions.find(({ value }) => value === 'USD')?.value : undefined
+        }
+        onChange={handleSelect}
+        data-testid="select"
+      >
         {selectOptions.map(({ displayValue, value }) => (
           <option key={value} value={value}>
             {displayValue}

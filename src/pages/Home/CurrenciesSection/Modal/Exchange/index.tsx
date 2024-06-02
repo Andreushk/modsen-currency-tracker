@@ -1,11 +1,11 @@
-import { AxiosError } from 'axios';
 import { useState } from 'react';
 
-import getExchangeRate from '@/api/getExchangeRate';
 import { Paragraph } from '@/components';
+import useCurrencyExchangeRate from '@/hooks/useCurrencyExchangeRate';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
 
 import CurrencyItem from './CurrencyItem';
+import Inputs from './Inputs';
 import ResultBlock from './ResultBlock';
 import StyledContainer from './styled';
 
@@ -14,22 +14,11 @@ interface IComponentProps {
 }
 
 const Exchange: React.FC<IComponentProps> = ({ baseCurrency }) => {
-  const [exchangeRate, setExchangeRate] = useState<number | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
+  const [selectedCurrencyCode, setSelectedCurrencyCode] = useState<AppCurrencyCodesType>('USD');
+  const { rate, isLoading, error } = useCurrencyExchangeRate(baseCurrency, selectedCurrencyCode);
 
-  const handleSelect = async (selectedCurrencyCode: AppCurrencyCodesType) => {
-    try {
-      setIsLoading(true);
-      const response: number = await getExchangeRate(baseCurrency, selectedCurrencyCode);
-      setIsLoading(false);
-      setExchangeRate(response);
-    } catch (e) {
-      const error = e as AxiosError;
-      console.error(error.message);
-      setError(error.message);
-      setIsLoading(false);
-    }
+  const handleSelect = (selectedCurrencyCode: AppCurrencyCodesType) => {
+    setSelectedCurrencyCode(selectedCurrencyCode);
   };
 
   return (
@@ -39,7 +28,8 @@ const Exchange: React.FC<IComponentProps> = ({ baseCurrency }) => {
         <Paragraph>To</Paragraph>
         <CurrencyItem onSelect={handleSelect} />
       </StyledContainer>
-      <ResultBlock exchangeRate={exchangeRate} isLoading={isLoading} error={error} />
+      <ResultBlock exchangeRate={rate} isLoading={isLoading} error={error} />
+      <Inputs key={rate} exchangeRate={rate} isDisabled={isLoading || Boolean(error)} />
     </>
   );
 };

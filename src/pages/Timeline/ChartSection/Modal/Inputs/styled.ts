@@ -26,5 +26,15 @@ export const StyledInputContainer = styled.div`
     color: ${({ theme }) => theme.colors.text.primary};
     border: ${({ theme }) => theme.spaces[0]} solid ${({ theme }) => theme.colors.borders};
     background-color: ${({ theme }) => theme.colors.bg.main};
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
   }
 `;
