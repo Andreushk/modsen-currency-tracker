@@ -41,10 +41,10 @@ export const StyledSelect = styled.select`
 `;
 
 export const StyledSelectOpenIcon = styled.div`
-  height: 16px;
+  height: ${({ theme }) => theme.heights[3]};
   position: absolute;
   top: 50%;
-  right: 8px;
+  right: ${({ theme }) => theme.spaces[5]}2;
   margin-top: -2px;
   transform: translateY(-50%);
 `;

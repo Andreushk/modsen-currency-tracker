@@ -1,6 +1,6 @@
 import { BASE_CURRENCY, currencies } from '@/constants/currencies';
 import { ICurrenciesState } from '@/state/slices/currencies';
-import ICurrencyApiResponse from '@/types/api/response';
+import { ICurrencyApiResponse } from '@/types/api/response';
 
 import makeApiRequest from './makeApiRequest';
 

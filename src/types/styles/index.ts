@@ -10,6 +10,7 @@ export interface IPalette {
     context: string;
     accent: string;
     links: string;
+    placeholder: string;
   };
   borders: string;
   icons: string;

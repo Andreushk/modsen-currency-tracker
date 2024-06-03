@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 
 import { AppCurrencyCodesType } from '@/types/api/currencies';
-import ICurrencyApiResponse from '@/types/api/response';
+import { ICurrencyApiResponse } from '@/types/api/response';
 
 const ENV_ERROR = 'Unable to query: no environment variables available.';
 

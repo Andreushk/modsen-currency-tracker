@@ -1,0 +1,2 @@
+export const DEFAULT_LONGITUDE = 27.5557;
+export const DEFAULT_LATITUDE = 53.9008;
