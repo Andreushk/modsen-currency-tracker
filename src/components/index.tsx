@@ -1,14 +1,15 @@
+export { default as AccentTitle } from './common/AccentTitle';
 export { default as BurgerMenuButton } from './common/BurgerMenuButton';
 export { default as Button } from './common/Button';
 export { default as Currency } from './common/Currency';
 export { default as CurrencyIcon } from './common/CurrencyIcon';
 export { default as CurrencyIconPlaceholder } from './common/CurrencyIconPlaceholder';
 export { default as LastUpdated } from './common/LastUpdated';
+export { default as Link } from './common/Link';
 export { default as LoadingCurrency } from './common/LoadingCurrency';
 export { default as LoadingShimmer } from './common/LoadingShimmer';
 export { default as Logo } from './common/Logo';
 export { default as ModalWindow } from './common/ModalWindow';
-export { default as NavigationLink } from './common/NavigationLink';
 export { default as OutsideClickDetector } from './common/OutsideClickDetector';
 export { default as Paragraph } from './common/Paragraph';
 export { default as Search } from './common/Search';

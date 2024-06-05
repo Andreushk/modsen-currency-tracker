@@ -99,7 +99,7 @@ const spaces: string[] = [
   '184px', // 184px 18
 ];
 
-const borderWidths = ['2px'];
+const borderWidths = ['2px', '4px'];
 
 const borderRadiuses: string[] = ['8px'];
 

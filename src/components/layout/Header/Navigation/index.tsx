@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NavigationLink } from '@/components';
+import { Link } from '@/components';
 import NAVIGATION_OPTIONS from '@/constants/navigation';
 
 import StyledNavigation from './styled';
@@ -8,7 +8,9 @@ import StyledNavigation from './styled';
 const Navigation: React.FC = () => (
   <StyledNavigation>
     {NAVIGATION_OPTIONS.map(({ displayValue, pathValue }) => (
-      <NavigationLink key={pathValue} displayValue={displayValue} pathValue={pathValue} />
+      <Link key={pathValue} href={pathValue}>
+        {displayValue}
+      </Link>
     ))}
   </StyledNavigation>
 );

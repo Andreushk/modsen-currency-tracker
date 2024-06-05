@@ -1,4 +1,4 @@
-import { NavigationLink, Title } from '@/components';
+import { Link, Title } from '@/components';
 import { RoutesType } from '@/constants/routes';
 
 import StyledContainer from './styeled';
@@ -18,12 +18,9 @@ const Block: React.FC<INavigationBlockOptions> = ({ displayValue, links }) => (
     <Title>{displayValue}</Title>
     <StyledContainer>
       {links.map(({ displayValue, pathValue }) => (
-        <NavigationLink
-          key={pathValue}
-          displayValue={displayValue}
-          pathValue={pathValue}
-          $isDarked
-        />
+        <Link key={pathValue} href={pathValue} $isDark>
+          {displayValue}
+        </Link>
       ))}
     </StyledContainer>
   </div>

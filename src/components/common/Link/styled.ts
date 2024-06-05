@@ -4,18 +4,17 @@ import styled from 'styled-components';
 import getMediaQuery from '@/utils/helpers/getMediaQuery';
 
 export interface IStyleProps {
-  $isDarked?: boolean;
+  $isDark?: boolean;
 }
 
-const StyledNavigationLink = styled(Link)<IStyleProps>`
+const StyledLink = styled(Link)<IStyleProps>`
   font-size: ${({ theme }) => theme.fontSizes[3]};
   font-weight: ${({ theme }) => theme.fontWeights.light};
   line-height: ${({ theme }) => theme.lineHeights[5]};
   text-decoration: none;
   transition: color ${({ theme }) => theme.durations.animations}ms ease;
 
-  color: ${({ theme, $isDarked }) =>
-    $isDarked ? theme.colors.text.links : theme.colors.text.primary};
+  color: ${({ theme, $isDark }) => ($isDark ? theme.colors.text.links : theme.colors.text.primary)};
 
   &:focus {
     color: ${({ theme }) => theme.colors.text.accent};
@@ -33,4 +32,4 @@ const StyledNavigationLink = styled(Link)<IStyleProps>`
   }
 `;
 
-export default StyledNavigationLink;
+export default StyledLink;

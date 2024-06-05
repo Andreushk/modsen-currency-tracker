@@ -2,7 +2,7 @@ import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { NavigationLink } from '@/components';
+import { Link } from '@/components';
 import { Routes } from '@/constants/routes';
 import withTheme from '@/utils/helpers/themeProvider';
 
@@ -11,7 +11,7 @@ describe('NavigationLink component', () => {
     const { getByText } = render(
       withTheme(
         <MemoryRouter>
-          <NavigationLink displayValue="Home" pathValue={Routes.BASIC} />
+          <Link href={Routes.BASIC}>Home</Link>
         </MemoryRouter>,
       ),
     );
@@ -23,11 +23,9 @@ describe('NavigationLink component', () => {
     const { getByText } = render(
       withTheme(
         <MemoryRouter>
-          <NavigationLink
-            displayValue="Contact"
-            pathValue={Routes.CONTACTS}
-            onClick={mockOnClick}
-          />
+          <Link href={Routes.CONTACTS} onClick={mockOnClick}>
+            Contact
+          </Link>
         </MemoryRouter>,
       ),
     );
