@@ -10,7 +10,9 @@ class SectionTitle extends PureComponent {
   render(): ReactNode {
     return (
       <StyledContainer>
-        <Title>{SECTION_TITLE}</Title>
+        <Title $fontSize="L" $fontWeight="light">
+          {SECTION_TITLE}
+        </Title>
       </StyledContainer>
     );
   }

@@ -1,5 +1,4 @@
-import Paragraph from '@/components/common/Paragraph';
-import Title from '@/components/common/Title';
+import { Paragraph, Title } from '@/components';
 
 import { StyledContainer, StyledSection } from './styled';
 
@@ -13,7 +12,9 @@ interface IComponentProps {
 const SectionError: React.FC<IComponentProps> = ({ message }) => (
   <StyledSection>
     <StyledContainer>
-      <Title>{ERROR_TITLE}</Title>
+      <Title $fontSize="M" $fontWeight="light">
+        {ERROR_TITLE}
+      </Title>
       <Paragraph>{ERROR_REASON + message}</Paragraph>
     </StyledContainer>
   </StyledSection>

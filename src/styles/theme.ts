@@ -116,8 +116,9 @@ const fontSizes: string[] = [
   '32px', // 32px 9
   '32.91px', // 32.91px 10
   '35px', // 35px 11
-  '76px', // 76px 12
-  '90.36px', // 90.36px 13
+  '38px', // 38px 12
+  '76px', // 76px 13
+  '90.36px', // 90.36px 14
 ];
 
 const lineHeights: string[] = [
@@ -131,8 +132,9 @@ const lineHeights: string[] = [
   '45px', // 45px 7
   '46.77px', // 46.77px 8
   '49.37px', // 49.37px 9
-  '114px', // 114px 10
-  '135.55px', // 135.55px 11
+  '57px', // 57px 10
+  '114px', // 114px 11
+  '135.55px', // 135.55px 12
 ];
 
 const fontWeights: IFontWeights = {

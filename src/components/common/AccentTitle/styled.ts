@@ -38,8 +38,8 @@ const StyledTitle = styled.h1<IStyleProps>`
   ${({ $variant }) =>
     $variant === 'L' &&
     css`
-      font-size: ${({ theme }) => theme.fontSizes[12]};
-      line-height: ${({ theme }) => theme.lineHeights[10]};
+      font-size: ${({ theme }) => theme.fontSizes[13]};
+      line-height: ${({ theme }) => theme.lineHeights[11]};
 
       @media ${getMediaQuery('desktopM')} {
         font-size: ${({ theme }) => theme.fontSizes[11]};

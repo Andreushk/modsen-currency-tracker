@@ -15,7 +15,11 @@ const Text: React.FC<IComponentProps> = ({ isLoading, lastUpdated }) => {
     formattedTime = `Last updated at ${formatIsoToHours(lastUpdated)}`;
   }
 
-  return <Title>{isLoading ? LOADING_TEXT : formattedTime}</Title>;
+  return (
+    <Title as="h5" $fontSize="M" $fontWeight="light">
+      {isLoading ? LOADING_TEXT : formattedTime}
+    </Title>
+  );
 };
 
 export default Text;

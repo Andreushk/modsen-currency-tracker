@@ -16,7 +16,9 @@ class SelectedCurrency extends Component<IComponentProps> {
       <>
         <CurrencyIcon code={this.props.code} />
         <StyledInformationContainer>
-          <Title>{namesMap[this.props.code]}</Title>
+          <Title as="h4" $fontSize="M" $fontWeight="light">
+            {namesMap[this.props.code]}
+          </Title>
           <StyledCode>{this.props.code}</StyledCode>
         </StyledInformationContainer>
       </>

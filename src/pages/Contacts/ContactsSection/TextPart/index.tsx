@@ -8,7 +8,9 @@ const SECTION_DESCRIPTION =
 
 const TextPart: React.FC = () => (
   <StyledContainer>
-    <Title>{SECTION_TITLE}</Title>
+    <Title $fontSize="L" $fontWeight="semiBold">
+      {SECTION_TITLE}
+    </Title>
     <Paragraph>{SECTION_DESCRIPTION}</Paragraph>
   </StyledContainer>
 );

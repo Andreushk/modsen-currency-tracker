@@ -15,7 +15,9 @@ export interface INavigationLinkOptions {
 
 const Block: React.FC<INavigationBlockOptions> = ({ displayValue, links }) => (
   <div>
-    <Title>{displayValue}</Title>
+    <Title $fontSize="M" $fontWeight="light">
+      {displayValue}
+    </Title>
     <StyledContainer>
       {links.map(({ displayValue, pathValue }) => (
         <Link key={pathValue} href={pathValue} $isDark>

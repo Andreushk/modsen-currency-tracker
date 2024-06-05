@@ -1,4 +1,5 @@
-import Title from '../Title';
+import { Title } from '@/components';
+
 import StyledModalWindowContainer from './styled';
 
 interface IComponentProps {
@@ -13,7 +14,9 @@ const ModalWindow: React.FC<IComponentProps> = ({ title, children }) => {
 
   return (
     <StyledModalWindowContainer onClick={handleClick}>
-      <Title>{title}</Title>
+      <Title as="h2" $fontSize="M" $fontWeight="light">
+        {title}
+      </Title>
       {children}
     </StyledModalWindowContainer>
   );

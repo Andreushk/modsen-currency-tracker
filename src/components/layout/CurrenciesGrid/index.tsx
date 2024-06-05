@@ -18,7 +18,9 @@ const CurrenciesGrid: React.FC<IComponentProps> = ({ title, children, onClick })
 
   return (
     <StyledContainer onClick={onClick && handleGridClick}>
-      <Title>{title}</Title>
+      <Title $fontSize="M" $fontWeight="light">
+        {title}
+      </Title>
       <StyledDivider />
       <StyledGridContainer>{children}</StyledGridContainer>
     </StyledContainer>
