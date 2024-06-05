@@ -4,7 +4,7 @@ import getMediaQuery from '@/utils/helpers/getMediaQuery';
 
 export const StyledSection = styled.section`
   max-width: ${({ theme }) => theme.widths[10]};
-  margin: 0 auto;
+  margin: ${({ theme }) => theme.spaces[6]} auto;
   padding-right: ${({ theme }) => theme.spaces[15]};
   padding-left: ${({ theme }) => theme.spaces[15]};
 

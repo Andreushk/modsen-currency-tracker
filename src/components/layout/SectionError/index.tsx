@@ -4,9 +4,10 @@ import { StyledContainer, StyledSection } from './styled';
 
 const ERROR_TITLE = 'Unable to display section :/';
 const ERROR_REASON = 'Reason: ';
+const ERROR_MESSAGE = 'Error during rendering.';
 
 interface IComponentProps {
-  message: string;
+  message?: string;
 }
 
 const SectionError: React.FC<IComponentProps> = ({ message }) => (
@@ -15,7 +16,7 @@ const SectionError: React.FC<IComponentProps> = ({ message }) => (
       <Title $fontSize="M" $fontWeight="light">
         {ERROR_TITLE}
       </Title>
-      <Paragraph>{ERROR_REASON + message}</Paragraph>
+      <Paragraph>{ERROR_REASON + (message ?? ERROR_MESSAGE)}</Paragraph>
     </StyledContainer>
   </StyledSection>
 );

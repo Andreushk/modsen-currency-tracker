@@ -54,6 +54,7 @@ class Map extends PureComponent<IComponentProps, IComponentState> {
       }
 
       const { lng, lat, zoom } = this.state;
+
       this.map = new mapboxgl.Map({
         container: this.mapContainer.current,
         attributionControl: false,
@@ -69,6 +70,10 @@ class Map extends PureComponent<IComponentProps, IComponentState> {
   }
 
   componentDidUpdate(prevProps: Readonly<IComponentProps>): void {
+    if (!this.map) {
+      return;
+    }
+
     const { currencyCode: actualCode } = this.props;
     const { currencyCode: prevCode } = prevProps;
 

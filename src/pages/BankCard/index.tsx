@@ -1,6 +1,6 @@
 import { Component, ReactNode } from 'react';
 
-import { IntroductionSection } from '@/components';
+import { ErrorBoundary, IntroductionSection, SectionError } from '@/components';
 
 import MapSection from './MapSection';
 
@@ -9,7 +9,9 @@ class BankCard extends Component {
     return (
       <main>
         <IntroductionSection />
-        <MapSection />
+        <ErrorBoundary fallback={<SectionError />}>
+          <MapSection />
+        </ErrorBoundary>
       </main>
     );
   }

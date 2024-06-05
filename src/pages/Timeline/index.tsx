@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import { IntroductionSection } from '@/components';
+import { ErrorBoundary, IntroductionSection, SectionError } from '@/components';
 
 import ChartSection from './ChartSection';
 
@@ -9,7 +9,9 @@ class Timeline extends Component {
     return (
       <main>
         <IntroductionSection />
-        <ChartSection />
+        <ErrorBoundary fallback={<SectionError />}>
+          <ChartSection />
+        </ErrorBoundary>
       </main>
     );
   }

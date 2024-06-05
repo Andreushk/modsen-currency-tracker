@@ -1,11 +1,13 @@
-import { IntroductionSection } from '@/components';
+import { ErrorBoundary, IntroductionSection, SectionError } from '@/components';
 
 import CurrenciesSection from './CurrenciesSection';
 
 const Home: React.FC = () => (
   <main>
     <IntroductionSection />
-    <CurrenciesSection />
+    <ErrorBoundary fallback={<SectionError />}>
+      <CurrenciesSection />
+    </ErrorBoundary>
   </main>
 );
 

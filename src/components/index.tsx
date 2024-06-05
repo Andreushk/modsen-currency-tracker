@@ -18,6 +18,7 @@ export { default as Switch } from './common/Switch';
 export { default as Title } from './common/Title';
 export { default as Toast } from './common/Toast';
 export { default as CurrenciesGrid } from './layout/CurrenciesGrid';
+export { default as ErrorBoundary } from './layout/ErrorBoundary';
 export { default as Footer } from './layout/Footer';
 export { default as Header } from './layout/Header';
 export { default as IntroductionSection } from './layout/IntroductionSection';
