@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import getCurrenciesWithExchangeRates from '@/api/getCurrenciesWithExchangeRates';
-import { LastUpdated, SectionError } from '@/components';
+import { LastUpdated, SectionError, SectionWithPaddings } from '@/components';
 import useDisableBodyScroll from '@/hooks/useDisableBodyScroll';
 import { addCurrencies, ICurrenciesState } from '@/state/slices/currencies';
 import { RootState } from '@/state/store';
@@ -12,7 +12,6 @@ import { AppCurrencyCodesType } from '@/types/api/currencies';
 import Currencies from './Currencies';
 import Loading from './Loading';
 import Modal from './Modal';
-import StyledSection from './styled';
 
 const CurrenciesSection: React.FC = () => {
   const currenciesData = useSelector((state: RootState) => state.currencies);
@@ -57,12 +56,12 @@ const CurrenciesSection: React.FC = () => {
   }
 
   return (
-    <StyledSection>
+    <SectionWithPaddings>
       <LastUpdated isLoading={isLoading} lastUpdated={currenciesData.lastUpdated} />
       {isLoading && <Loading />}
       {!isLoading && <Currencies currenciesData={currenciesData} onClick={handleClickedCurrency} />}
       {currencyCode && <Modal selectedCurrencyCode={currencyCode} onClose={handleModalClose} />}
-    </StyledSection>
+    </SectionWithPaddings>
   );
 };
 

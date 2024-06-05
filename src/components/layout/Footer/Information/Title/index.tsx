@@ -1,13 +1,15 @@
-import { Logo } from '@/components';
+import { AccentTitle, Logo } from '@/components';
 
-import { StyledContainer, StyledTitle } from './styled';
+import StyledContainer from './styled';
 
 const TITLE = 'Modsen Currency Tracker';
 
 const Title: React.FC = () => (
   <StyledContainer>
     <Logo size={40} />
-    <StyledTitle>{TITLE}</StyledTitle>
+    <AccentTitle as="h3" $variant="M">
+      {TITLE}
+    </AccentTitle>
   </StyledContainer>
 );
 

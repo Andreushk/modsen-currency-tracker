@@ -4,6 +4,7 @@ const StyledContainer = styled.div`
   position: absolute;
   top: ${({ theme }) => theme.spaces[13]};
   left: 0;
+  z-index: ${({ theme }) => theme.zIndexes[2]};
   display: flex;
   flex-direction: column;
   width: 100%;

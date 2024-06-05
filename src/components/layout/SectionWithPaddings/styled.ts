@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import getMediaQuery from '@/utils/helpers/getMediaQuery';
 
-const StyledSection = styled.section`
+const StyledSection = styled.div`
   padding-right: ${({ theme }) => theme.spaces[15]};
   padding-left: ${({ theme }) => theme.spaces[15]};
 

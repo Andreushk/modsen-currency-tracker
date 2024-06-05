@@ -35,7 +35,22 @@ const StyledTitle = styled.h1<IStyleProps>`
       }
     `}
 
-  ${({ $variant }) => $variant === 'L' && css``}
+  ${({ $variant }) =>
+    $variant === 'L' &&
+    css`
+      font-size: ${({ theme }) => theme.fontSizes[12]};
+      line-height: ${({ theme }) => theme.lineHeights[10]};
+
+      @media ${getMediaQuery('desktopM')} {
+        font-size: ${({ theme }) => theme.fontSizes[11]};
+        line-height: ${({ theme }) => theme.lineHeights[7]};
+      }
+
+      @media ${getMediaQuery('mobileL')} {
+        font-size: ${({ theme }) => theme.fontSizes[7]};
+        line-height: ${({ theme }) => theme.lineHeights[3]};
+      }
+    `}
 `;
 
 export default StyledTitle;

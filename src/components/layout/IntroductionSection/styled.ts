@@ -35,6 +35,7 @@ const StyledSection = styled.section<IStyleProps>`
     `}
 
   @media ${getMediaQuery('desktopM')} {
+    gap: ${({ theme }) => theme.spaces[3]};
     & svg {
       width: 200px;
       height: 210px;
@@ -42,7 +43,6 @@ const StyledSection = styled.section<IStyleProps>`
   }
 
   @media ${getMediaQuery('tabletS')} {
-    gap: ${({ theme }) => theme.spaces[3]};
     padding-right: ${({ theme }) => theme.spaces[7]};
     padding-left: ${({ theme }) => theme.spaces[7]};
 

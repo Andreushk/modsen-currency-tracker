@@ -1,14 +1,16 @@
+import { SectionWithPaddings } from '@/components';
+
 import InformationPart from './InformationPart';
-import { StyledSection, StyledSectionContentContainer } from './styled';
+import StyledContainer from './styled';
 import TextPart from './TextPart';
 
 const ContactsSection: React.FC = () => (
-  <StyledSection>
-    <StyledSectionContentContainer>
+  <SectionWithPaddings>
+    <StyledContainer>
       <TextPart />
       <InformationPart />
-    </StyledSectionContentContainer>
-  </StyledSection>
+    </StyledContainer>
+  </SectionWithPaddings>
 );
 
 export default ContactsSection;

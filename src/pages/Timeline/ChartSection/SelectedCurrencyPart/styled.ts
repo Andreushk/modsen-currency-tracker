@@ -6,7 +6,7 @@ const StyledContainer = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.widths[5]};
-  margin-top: ${({ theme }) => theme.widths[17]};
+  margin-top: ${({ theme }) => theme.spaces[17]};
 
   @media ${getMediaQuery('desktopM')} {
     gap: ${({ theme }) => theme.spaces[3]};

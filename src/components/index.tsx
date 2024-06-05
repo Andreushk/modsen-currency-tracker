@@ -25,3 +25,4 @@ export { default as Overlay } from './layout/Overlay';
 export { default as PageLayout } from './layout/PageLayout';
 export { default as PortalToBody } from './layout/PortalToBody';
 export { default as SectionError } from './layout/SectionError';
+export { default as SectionWithPaddings } from './layout/SectionWithPaddings';

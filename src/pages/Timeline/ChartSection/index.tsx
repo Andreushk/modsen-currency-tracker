@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import { Toast } from '@/components';
+import { SectionWithPaddings, Toast } from '@/components';
 import { ANIMATION_DELAY_MULTIPLIER } from '@/components/common/Toast';
 import { ChartEvents } from '@/constants/chartEvents';
 import { darkTheme } from '@/styles/theme';
@@ -12,7 +12,7 @@ import ChartPart from './ChartPart';
 import Modal from './Modal';
 import SelectedCurrencyPart from './SelectedCurrencyPart';
 import SelectPart from './SelectPart';
-import { StyledSection, StyledSectionContentContainer } from './styled';
+import StyledContainer from './styled';
 
 const CHART_TOAST_MESSAGE = 'The chart has been successfully created!';
 
@@ -70,8 +70,8 @@ class ChartSection extends Component<object, IComponentState> {
     const { selectedCurrencyCode, chartData, selectKey, showToast } = this.state;
 
     return (
-      <StyledSection>
-        <StyledSectionContentContainer>
+      <SectionWithPaddings>
+        <StyledContainer>
           <SelectPart key={selectKey} onSelect={this.handleSelect} />
           <SelectedCurrencyPart code={selectedCurrencyCode} />
           <ChartPart data={chartData} />
@@ -79,8 +79,8 @@ class ChartSection extends Component<object, IComponentState> {
             <Modal onCancel={this.handleCancelModal} onSave={this.handleSaveModal} />
           )}
           {showToast && <Toast message={CHART_TOAST_MESSAGE} />}
-        </StyledSectionContentContainer>
-      </StyledSection>
+        </StyledContainer>
+      </SectionWithPaddings>
     );
   }
 }

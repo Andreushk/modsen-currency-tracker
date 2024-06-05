@@ -44,7 +44,7 @@ export const StyledSelectOpenIcon = styled.div`
   height: ${({ theme }) => theme.heights[3]};
   position: absolute;
   top: 50%;
-  right: ${({ theme }) => theme.spaces[5]}2;
+  right: ${({ theme }) => theme.spaces[5]};
   margin-top: -2px;
   transform: translateY(-50%);
 `;

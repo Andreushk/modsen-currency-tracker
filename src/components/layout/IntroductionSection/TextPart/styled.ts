@@ -14,47 +14,17 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledTitleContainer = styled.div`
+  text-align: right;
+  max-width: 690px;
   margin-right: ${({ theme }) => theme.spaces[13]};
 
-  & h1 {
-    font-weight: ${({ theme }) => theme.fontWeights.semiBold};
-    text-align: right;
-    background: linear-gradient(90.18deg, #00ce2c 0.18%, #aedf23 49.3%, #a3dc00 99.88%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  & h1:first-of-type {
-    font-size: ${({ theme }) => theme.fontSizes[12]};
-    line-height: ${({ theme }) => theme.lineHeights[10]};
-  }
-
-  & h1:last-of-type {
-    font-size: ${({ theme }) => theme.fontSizes[13]};
-    line-height: ${({ theme }) => theme.lineHeights[11]};
-    margin-top: -${({ theme }) => theme.spaces[4]};
-  }
-
   @media ${getMediaQuery('desktopM')} {
-    & h1:first-of-type,
-    h1:last-of-type {
-      font-size: ${({ theme }) => theme.fontSizes[11]};
-      line-height: ${({ theme }) => theme.lineHeights[7]};
-      margin-top: 0;
-    }
-  }
-
-  @media ${getMediaQuery('tabletS')} {
+    max-width: auto;
     margin-right: 0;
   }
 
   @media ${getMediaQuery('mobileL')} {
-    & h1:first-of-type,
-    h1:last-of-type {
-      font-size: ${({ theme }) => theme.fontSizes[7]};
-      line-height: ${({ theme }) => theme.lineHeights[3]};
-      text-align: center;
-    }
+    text-align: center;
   }
 `;
 
@@ -70,9 +40,6 @@ export const StyledDescription = styled.p`
   @media ${getMediaQuery('desktopM')} {
     font-size: ${({ theme }) => theme.fontSizes[2]};
     line-height: ${({ theme }) => theme.lineHeights[1]};
-  }
-
-  @media ${getMediaQuery('tabletS')} {
     margin-right: 0;
     text-align: right;
   }
@@ -81,5 +48,6 @@ export const StyledDescription = styled.p`
     font-size: ${({ theme }) => theme.fontSizes[1]};
     line-height: ${({ theme }) => theme.lineHeights[0]};
     text-align: center;
+    margin-left: unset;
   }
 `;
