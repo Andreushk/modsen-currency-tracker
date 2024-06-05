@@ -44,7 +44,7 @@ class Map extends PureComponent<IComponentProps, IComponentState> {
 
     this.banks = [];
     this.handleMapMove = this.handleMapMove.bind(this);
-    this.debouncedHandleMapMove = this.debounce(this.handleMapMove, 5000);
+    this.debouncedHandleMapMove = this.debounce(this.handleMapMove, 2000);
   }
 
   componentDidMount(): void {

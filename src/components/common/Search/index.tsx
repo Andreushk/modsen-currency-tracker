@@ -27,6 +27,7 @@ class Search extends PureComponent<IComponentProps, IComponentState> {
 
   handleSelectedCurrency = (code: AppCurrencyCodesType): void => {
     this.props.onSelect(code);
+    this.setState({ isFocused: false });
   };
 
   handleInputFocus = (): void => {
