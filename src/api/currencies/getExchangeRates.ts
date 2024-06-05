@@ -5,7 +5,7 @@ import { ICurrencyApiResponse } from '@/types/api/response';
 
 const ENV_ERROR = 'Unable to query: no environment variables available.';
 
-async function makeApiRequest(
+async function getExchangeRates(
   baseCurrency: AppCurrencyCodesType,
   interestingCurrencies: readonly AppCurrencyCodesType[],
 ): Promise<ICurrencyApiResponse> {
@@ -26,4 +26,4 @@ async function makeApiRequest(
   return response.data;
 }
 
-export default makeApiRequest;
+export default getExchangeRates;

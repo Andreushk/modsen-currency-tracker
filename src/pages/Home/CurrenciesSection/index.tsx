@@ -1,12 +1,8 @@
-import { AxiosError } from 'axios';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 
-import getCurrenciesWithExchangeRates from '@/api/getCurrenciesWithExchangeRates';
 import { LastUpdated, SectionError, SectionWithPaddings } from '@/components';
+import useCurrenciesExchangeRates from '@/hooks/useCurrenciesExchangeRates';
 import useDisableBodyScroll from '@/hooks/useDisableBodyScroll';
-import { addCurrencies, ICurrenciesState } from '@/state/slices/currencies';
-import { RootState } from '@/state/store';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
 
 import Currencies from './Currencies';
@@ -14,34 +10,9 @@ import Loading from './Loading';
 import Modal from './Modal';
 
 const CurrenciesSection: React.FC = () => {
-  const currenciesData = useSelector((state: RootState) => state.currencies);
-  const [isLoading, setIsLoading] = useState<boolean>(currenciesData.currencies.length === 0);
-  const [error, setError] = useState<string | null>(null);
   const [currencyCode, setCurrencyCode] = useState<AppCurrencyCodesType | null>(null);
-
+  const { currenciesRates, isLoading, error } = useCurrenciesExchangeRates();
   useDisableBodyScroll(Boolean(currencyCode));
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (currenciesData.currencies.length > 0) {
-      return;
-    }
-
-    const fetchData = async () => {
-      try {
-        const response: ICurrenciesState = await getCurrenciesWithExchangeRates();
-        dispatch(addCurrencies(response));
-        setIsLoading(false);
-      } catch (e) {
-        const errorObject = e as AxiosError;
-        console.error(errorObject.code);
-        setError(errorObject.message);
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [currenciesData, dispatch]);
 
   const handleClickedCurrency = (currencyCode: AppCurrencyCodesType): void => {
     setCurrencyCode(currencyCode);
@@ -57,9 +28,11 @@ const CurrenciesSection: React.FC = () => {
 
   return (
     <SectionWithPaddings>
-      <LastUpdated isLoading={isLoading} lastUpdated={currenciesData.lastUpdated} />
+      <LastUpdated isLoading={isLoading} lastUpdated={currenciesRates.lastUpdated} />
       {isLoading && <Loading />}
-      {!isLoading && <Currencies currenciesData={currenciesData} onClick={handleClickedCurrency} />}
+      {!isLoading && (
+        <Currencies currenciesData={currenciesRates} onClick={handleClickedCurrency} />
+      )}
       {currencyCode && <Modal selectedCurrencyCode={currencyCode} onClose={handleModalClose} />}
     </SectionWithPaddings>
   );

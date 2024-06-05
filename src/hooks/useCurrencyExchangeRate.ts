@@ -1,8 +1,10 @@
 import { AxiosError } from 'axios';
 import { useEffect, useState } from 'react';
 
-import getExchangeRate from '@/api/getExchangeRate';
+import getExchangeRates from '@/api/currencies/getExchangeRates';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
+
+const ERROR_MESSAGE = 'Failed to retrieve the currency information.';
 
 const useCurrencyExchangeRate = (
   baseCurrency: AppCurrencyCodesType,
@@ -16,9 +18,13 @@ const useCurrencyExchangeRate = (
     const getRate = async () => {
       try {
         setIsLoading(true);
-        const response: number = await getExchangeRate(baseCurrency, currencyCode);
+
+        const response = await getExchangeRates(baseCurrency, [currencyCode]);
+        if (response.data.length === 0) throw new Error(ERROR_MESSAGE);
+        const result: number = Object.values(response.data)[0].value;
+
         setIsLoading(false);
-        setRate(response);
+        setRate(result);
       } catch (e) {
         const error = e as AxiosError;
         console.error(error.message);
