@@ -12,16 +12,12 @@ interface IComponentProps {
   error: string | null;
 }
 
-const ResultBlock: React.FC<IComponentProps> = ({ exchangeRate, isLoading, error }) => {
-  console.log('exchangeRate comp', exchangeRate);
-
-  return (
-    <StyledContainer data-testid="results">
-      {exchangeRate && <Paragraph>{`1 : ${exchangeRate}`}</Paragraph>}
-      {isLoading && <Paragraph>{LOADING_TEXT}</Paragraph>}
-      {error}
-    </StyledContainer>
-  );
-};
+const ResultBlock: React.FC<IComponentProps> = ({ exchangeRate, isLoading, error }) => (
+  <StyledContainer data-testid="results">
+    {exchangeRate && <Paragraph data-testid="rate">{`1 : ${exchangeRate}`}</Paragraph>}
+    {isLoading && <Paragraph>{LOADING_TEXT}</Paragraph>}
+    {error}
+  </StyledContainer>
+);
 
 export default React.memo(ResultBlock);
