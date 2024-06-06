@@ -14,7 +14,9 @@ interface IComponentProps {
 
 const ResultBlock: React.FC<IComponentProps> = ({ exchangeRate, isLoading, error }) => (
   <StyledContainer data-testid="results">
-    {exchangeRate && <Paragraph data-testid="rate">{`1 : ${exchangeRate}`}</Paragraph>}
+    {exchangeRate && !isLoading && (
+      <Paragraph data-testid="rate">{`1 : ${exchangeRate}`}</Paragraph>
+    )}
     {isLoading && <Paragraph>{LOADING_TEXT}</Paragraph>}
     {error}
   </StyledContainer>

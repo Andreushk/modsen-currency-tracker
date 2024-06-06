@@ -17,7 +17,6 @@ function createDatasets(datesValues: ICurrencyTimeline[]) {
             s: [priceOpen, priceClose],
           };
         }),
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         backgroundColor: (ctx: any) => {
           const { raw } = ctx;
           return raw.o > raw.c ? 'red' : 'green';
