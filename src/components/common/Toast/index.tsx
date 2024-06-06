@@ -24,7 +24,7 @@ const Toast: React.FC<IComponentProps> = ({ message }) => {
   }, [theme]);
 
   return (
-    <StyledContainer $isVisible={isVisible}>
+    <StyledContainer $isVisible={isVisible} data-testid="toast">
       <Paragraph>{message}</Paragraph>
     </StyledContainer>
   );

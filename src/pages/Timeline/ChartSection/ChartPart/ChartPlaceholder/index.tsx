@@ -4,7 +4,7 @@ import StyledContainer from './styled';
 
 class ChartPlaceholder extends Component {
   render(): ReactNode {
-    return <StyledContainer />;
+    return <StyledContainer data-testid="chart-placeholder" />;
   }
 }
 

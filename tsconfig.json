@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["@testing-library/jest-dom"],
+    "types": ["@testing-library/jest-dom", "cypress"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "outDir": "./dist/",

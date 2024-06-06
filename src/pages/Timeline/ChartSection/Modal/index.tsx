@@ -75,7 +75,7 @@ class Modal extends Component<IComponentProps, IComponentState> {
       <PortalToBody>
         <Overlay>
           <ModalWindow title={MODAL_TITLE}>
-            <StyledContainer>
+            <StyledContainer data-testid="timeline-modal">
               <Paragraph>{this.lastMonthDates[this.state.currentDateIndex]}</Paragraph>
               <InputList key={this.state.currentDateIndex} inputRefs={this.inputRefs} />
               <Buttons

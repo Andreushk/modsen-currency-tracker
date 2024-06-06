@@ -7,7 +7,7 @@ import ChartSection from './ChartSection';
 class Timeline extends Component {
   render(): React.ReactNode {
     return (
-      <main>
+      <main data-testid="timeline-page">
         <IntroductionSection />
         <ErrorBoundary fallback={<SectionError />}>
           <ChartSection />

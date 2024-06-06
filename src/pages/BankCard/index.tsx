@@ -7,7 +7,7 @@ import MapSection from './MapSection';
 class BankCard extends Component {
   render(): ReactNode {
     return (
-      <main>
+      <main data-testid="bank-card-page">
         <IntroductionSection />
         <ErrorBoundary fallback={<SectionError />}>
           <MapSection />

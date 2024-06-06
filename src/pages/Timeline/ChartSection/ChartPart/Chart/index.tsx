@@ -32,7 +32,7 @@ class Chart extends PureComponent<IComponentProps> {
     const { datasets, options, plugins } = createConfig(this.props.data);
 
     return (
-      <StyledContainer>
+      <StyledContainer data-testid="chart">
         <Bar data={datasets} options={options} plugins={plugins} />
       </StyledContainer>
     );

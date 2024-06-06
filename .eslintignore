@@ -4,3 +4,4 @@ node_modules
 yarn.lock
 webpack.config.ts
 build
+cypress.config.ts

@@ -6,7 +6,7 @@ class Placeholder extends Component {
   render(): ReactNode {
     return (
       <>
-        <StyledIconContainer />
+        <StyledIconContainer data-testid="icon-placeholder" />
         <StyledInformationContainer>
           <div />
           <div />

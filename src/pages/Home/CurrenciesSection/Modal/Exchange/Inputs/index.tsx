@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { Paragraph } from '@/components';
 import exchangeCurrency, { FromCurrencyType } from '@/utils/helpers/exchangeCurrencies';
-import roundExchangeRate from '@/utils/helpers/roundExchangeRate';
 
 import StyledContainer from './styled';
 
@@ -18,7 +17,7 @@ const Inputs: React.FC<IComponentProps> = ({ isDisabled, exchangeRate }) => {
   const [secondCurrency, setSecondCurrency] = useState<string | null>(null);
 
   if (exchangeRate && !secondCurrency) {
-    setSecondCurrency(roundExchangeRate(exchangeRate));
+    setSecondCurrency(String(exchangeRate));
   }
 
   const makeCurrencyExchange = (value: string, fromCurrency: FromCurrencyType): void => {
