@@ -9,6 +9,7 @@ export enum Routes {
   SNAPS = '/snaps',
   IDEAS = '/ideas',
   STREAMS = '/streams',
+  NOT_FOUND = '*',
 }
 
 export type RoutesType = `${Routes}`;
