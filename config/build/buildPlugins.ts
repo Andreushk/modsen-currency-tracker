@@ -13,7 +13,9 @@ export function buildPlugins(options: IBuildOptions): Configuration['plugins'] {
       template: options.paths.html,
       favicon: path.resolve(options.paths.public, 'favicon.ico'),
     }),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+    }),
   ];
 
   if (isDev) {
