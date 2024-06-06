@@ -19,10 +19,10 @@ describe('Navigation module', () => {
     cy.get('[data-testid="timeline-page"]');
   });
 
-  // it('Navigates to the Bank card page', () => {
-  //   cy.get(`a[href="${Routes.BANK_CARD}"]`).click();
-  //   cy.get('[data-testid="bank-card-page"]');
-  // });
+  it('Navigates to the Bank card page', () => {
+    cy.get(`a[href="${Routes.BANK_CARD}"]`).click();
+    cy.get('[data-testid="bank-card-page"]');
+  });
 
   it('Navigates to the Contacts page', () => {
     cy.get(`a[href="${Routes.CONTACTS}"]`).click();

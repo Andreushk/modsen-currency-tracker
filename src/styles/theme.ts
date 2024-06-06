@@ -92,7 +92,7 @@ const spaces: string[] = [
   '3.625rem', // 58px 11
   '4rem', // 64px 12
   '5rem', // 80px 13
-  '5.375rme', // 86px 14
+  '5.375rem', // 86px 14
   '6rem', // 96px 15
   '7.188rem', // 115px 16
   '9.688rem', // 155px 17
