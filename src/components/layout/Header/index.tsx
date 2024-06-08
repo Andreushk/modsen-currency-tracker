@@ -1,11 +1,9 @@
 import { useCallback, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { BurgerMenuButton, Logo, Switch } from '@/components';
-import useDisableBodyScroll from '@/hooks/useDisableBodyScroll';
-import useScreenWidth from '@/hooks/useScreenWidth';
-import { toggle } from '@/state/slices/theme';
-import { RootState } from '@/state/store';
+import { useAppSelector, useDisableBodyScroll, useScreenWidth } from '@/hooks';
+import { toggle } from '@/store/reducers/theme';
 import { darkTheme } from '@/styles/theme';
 
 import MobileMenu from './MobileMenu';
@@ -15,7 +13,7 @@ import { StyledHeader, StyledHeaderContentContainer } from './styled';
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
-  const theme = useSelector((state: RootState) => state.theme);
+  const isDarkMode = useAppSelector((state) => state.theme.isDarkMode);
   const dispatch = useDispatch();
 
   const isWideScreen: boolean = useScreenWidth(parseInt(darkTheme.breakpoints.tabletS));
@@ -35,7 +33,7 @@ const Header: React.FC = () => {
         <Logo size={40} withNavigation />
         {isWideScreen && !isMobileMenuOpen && <Navigation />}
         {isWideScreen && !isMobileMenuOpen && (
-          <Switch isOn={!theme.isDarkMode} onClick={handleThemeSwitchClick} />
+          <Switch isOn={!isDarkMode} onClick={handleThemeSwitchClick} />
         )}
         {(!isWideScreen || isMobileMenuOpen) && (
           <BurgerMenuButton onClick={handleToggleMobileMenu} />

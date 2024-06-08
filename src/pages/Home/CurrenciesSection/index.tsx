@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { LastUpdated, SectionError, SectionWithPaddings } from '@/components';
-import useCurrenciesExchangeRates from '@/hooks/useCurrenciesExchangeRates';
-import useDisableBodyScroll from '@/hooks/useDisableBodyScroll';
+import { useAppDispatch, useAppSelector, useDisableBodyScroll } from '@/hooks';
+import fetchCurrenciesWithRates from '@/store/reducers/currencies/actionCreators';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
 
 import Currencies from './Currencies';
@@ -11,8 +11,14 @@ import Modal from './Modal';
 
 const CurrenciesSection: React.FC = () => {
   const [currencyCode, setCurrencyCode] = useState<AppCurrencyCodesType | null>(null);
-  const { currenciesRates, isLoading, error } = useCurrenciesExchangeRates();
+  const { currencies, isLoading, lastUpdated, error } = useAppSelector((state) => state.currencies);
+
+  const dispatch = useAppDispatch();
   useDisableBodyScroll(Boolean(currencyCode));
+
+  useEffect((): void => {
+    dispatch(fetchCurrenciesWithRates());
+  }, [dispatch]);
 
   const handleClickedCurrency = (currencyCode: AppCurrencyCodesType): void => {
     setCurrencyCode(currencyCode);
@@ -28,11 +34,9 @@ const CurrenciesSection: React.FC = () => {
 
   return (
     <SectionWithPaddings>
-      <LastUpdated isLoading={isLoading} lastUpdated={currenciesRates.lastUpdated} />
+      <LastUpdated isLoading={isLoading} lastUpdated={lastUpdated} />
       {isLoading && <Loading />}
-      {!isLoading && (
-        <Currencies currenciesData={currenciesRates} onClick={handleClickedCurrency} />
-      )}
+      {!isLoading && <Currencies currenciesData={currencies} onClick={handleClickedCurrency} />}
       {currencyCode && <Modal selectedCurrencyCode={currencyCode} onClose={handleModalClose} />}
     </SectionWithPaddings>
   );

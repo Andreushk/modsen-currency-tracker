@@ -1,13 +1,11 @@
-import { useSelector } from 'react-redux';
-
 import { Logo } from '@/components';
-import { RootState } from '@/state/store';
+import useAppSelector from '@/hooks/useAppSelector';
 
 import StyledSection from './styled';
 import TextPart from './TextPart';
 
 const IntroductionSection: React.FC = () => {
-  const isDarkMode: boolean = useSelector((state: RootState) => state.theme.isDarkMode);
+  const isDarkMode: boolean = useAppSelector((state) => state.theme.isDarkMode);
 
   return (
     <StyledSection $isDarkMode={isDarkMode}>

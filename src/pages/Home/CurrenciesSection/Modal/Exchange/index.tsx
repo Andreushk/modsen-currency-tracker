@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Paragraph } from '@/components';
-import useCurrencyExchangeRate from '@/hooks/useCurrencyExchangeRate';
+import { useCurrencyExchangeRate } from '@/hooks';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
 
 import CurrencyItem from './CurrencyItem';
