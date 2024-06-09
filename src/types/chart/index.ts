@@ -1,12 +1,22 @@
-import { ScriptableContext } from 'chart.js';
-import { AnyObject } from 'chart.js/dist/types/basic';
-
 export interface ICurrencyTimeline {
   timeClose: string;
   priceOpen: number;
   priceClose: number;
   priceHigh: number;
   priceLow: number;
+}
+
+export interface IChartContext {
+  dataIndex: number;
+  label: string;
+  raw: {
+    c: number;
+    h: number;
+    l: number;
+    o: number;
+    s: [number, number];
+    x: string;
+  };
 }
 
 export interface IDatasets {
@@ -21,9 +31,7 @@ export interface IDatasets {
         c: number;
         s: [number, number];
       }[];
-      backgroundColor:
-        | string
-        | ((ctx: ScriptableContext<'bar'>, options: AnyObject) => string | undefined);
+      backgroundColor: string | ((context: any) => string | undefined);
       barPercentage: number;
       maxBarThickness: number;
       minBarLength: number;

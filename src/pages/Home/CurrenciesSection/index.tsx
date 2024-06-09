@@ -17,8 +17,10 @@ const CurrenciesSection: React.FC = () => {
   useDisableBodyScroll(Boolean(currencyCode));
 
   useEffect((): void => {
-    dispatch(fetchCurrenciesWithRates());
-  }, [dispatch]);
+    if (!currencies || currencies.length === 0) {
+      dispatch(fetchCurrenciesWithRates());
+    }
+  }, [currencies, dispatch]);
 
   const handleClickedCurrency = (currencyCode: AppCurrencyCodesType): void => {
     setCurrencyCode(currencyCode);

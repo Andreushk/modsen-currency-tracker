@@ -1,4 +1,4 @@
-import { ICurrencyTimeline, IDatasets } from '@/types/chart';
+import { IChartContext, ICurrencyTimeline, IDatasets } from '@/types/chart';
 
 function createDatasets(datesValues: ICurrencyTimeline[]) {
   const data: IDatasets = {
@@ -17,8 +17,8 @@ function createDatasets(datesValues: ICurrencyTimeline[]) {
             s: [priceOpen, priceClose],
           };
         }),
-        backgroundColor: (ctx: any) => {
-          const { raw } = ctx;
+        backgroundColor: (context: IChartContext) => {
+          const { raw } = context;
           return raw.o > raw.c ? 'red' : 'green';
         },
         barPercentage: 1,
