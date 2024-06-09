@@ -1,33 +1,47 @@
-import { Component } from 'react';
+import { Component, ReactNode } from 'react';
 
 import { SectionWithPaddings, Toast } from '@/components';
 import { ANIMATION_DELAY_MULTIPLIER } from '@/components/common/Toast';
 import { ChartEvents } from '@/constants/chartEvents';
+import { BASE_CURRENCY } from '@/constants/currencies';
 import { darkTheme } from '@/styles/theme';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
 import { ICurrencyTimeline } from '@/types/chart';
+import generateCurrencyTimeline from '@/utils/chart/generateCurrencyTimeline';
 import observer from '@/utils/chart/observer';
+import getPreviousDates from '@/utils/helpers/getPreviousDates';
 
 import ChartPart from './ChartPart';
 import Modal from './Modal';
-import SelectedCurrencyPart from './SelectedCurrencyPart';
+import SelectedCurrency from './SelectedCurrency';
 import SelectPart from './SelectPart';
 import StyledContainer from './styled';
 
 const CHART_TOAST_MESSAGE = 'The chart has been successfully created!';
 
 interface IComponentState {
-  selectKey: number;
-  selectedCurrencyCode: AppCurrencyCodesType | null;
+  selectedCurrencyCode: AppCurrencyCodesType;
   chartData: ICurrencyTimeline[] | null;
-  showToast: boolean;
+  selectKey: number;
+  isShowModal: boolean;
+  isShowToast: boolean;
 }
 
 class ChartSection extends Component<object, IComponentState> {
+  prevMonthDates: string[];
+
   constructor(props: object) {
     super(props);
 
-    this.state = { selectedCurrencyCode: null, chartData: null, selectKey: 1, showToast: false };
+    this.prevMonthDates = getPreviousDates();
+
+    this.state = {
+      selectedCurrencyCode: BASE_CURRENCY,
+      chartData: generateCurrencyTimeline(this.prevMonthDates),
+      selectKey: 0,
+      isShowModal: false,
+      isShowToast: false,
+    };
   }
 
   componentDidMount(): void {
@@ -39,46 +53,48 @@ class ChartSection extends Component<object, IComponentState> {
   }
 
   handleChartCreation = (): void => {
-    this.setState({ showToast: true });
+    this.setState({ isShowToast: true });
 
     const timerId = setTimeout(
       () => {
-        this.setState({ showToast: false });
+        this.setState({ isShowToast: false });
         clearTimeout(timerId);
       },
       darkTheme.durations.animations * 2 * ANIMATION_DELAY_MULTIPLIER,
     );
   };
 
-  handleSelect = (selectedCurrencyCode: AppCurrencyCodesType): void => {
-    this.setState({ selectedCurrencyCode, chartData: null });
-  };
-
-  handleSaveModal = (chartData: ICurrencyTimeline[]): void => {
-    this.setState({ chartData });
+  handleSelect = (currencyCode: AppCurrencyCodesType): void => {
+    document.body.style.overflow = 'hidden';
+    this.setState({ selectedCurrencyCode: currencyCode, chartData: null, isShowModal: true });
   };
 
   handleCancelModal = (): void => {
+    document.body.style.overflow = 'unset';
     this.setState((prevState) => ({
-      chartData: null,
-      selectedCurrencyCode: null,
+      chartData: generateCurrencyTimeline(this.prevMonthDates),
+      selectedCurrencyCode: BASE_CURRENCY,
       selectKey: prevState.selectKey + 1,
+      isShowModal: false,
     }));
   };
 
-  render(): React.ReactNode {
-    const { selectedCurrencyCode, chartData, selectKey, showToast } = this.state;
+  handleSaveModal = (chartData: ICurrencyTimeline[]): void => {
+    document.body.style.overflow = 'unset';
+    this.setState({ chartData, isShowModal: false });
+  };
+
+  render(): ReactNode {
+    const { selectedCurrencyCode, chartData, selectKey, isShowModal, isShowToast } = this.state;
 
     return (
       <SectionWithPaddings>
         <StyledContainer>
           <SelectPart key={selectKey} onSelect={this.handleSelect} />
-          <SelectedCurrencyPart code={selectedCurrencyCode} />
+          <SelectedCurrency code={selectedCurrencyCode} />
           <ChartPart data={chartData} />
-          {selectedCurrencyCode && !chartData && (
-            <Modal onCancel={this.handleCancelModal} onSave={this.handleSaveModal} />
-          )}
-          {showToast && <Toast message={CHART_TOAST_MESSAGE} />}
+          {isShowModal && <Modal onCancel={this.handleCancelModal} onSave={this.handleSaveModal} />}
+          {isShowToast && <Toast message={CHART_TOAST_MESSAGE} />}
         </StyledContainer>
       </SectionWithPaddings>
     );

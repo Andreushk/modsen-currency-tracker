@@ -5,10 +5,6 @@ export const BASE_CURRENCY: AppCurrencyCodesType = 'USD';
 
 export const SELECT_OPTION: SelectOptionType[] = [
   {
-    value: 'none',
-    displayValue: 'Select',
-  },
-  {
     value: 'USD',
     displayValue: 'USD',
   },

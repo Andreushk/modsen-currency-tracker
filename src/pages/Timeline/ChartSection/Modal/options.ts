@@ -1,24 +1,28 @@
+import { ICurrencyTimeline } from '@/types/chart';
+
+type ICurrencyTimelineKeysType = keyof ICurrencyTimeline;
+
 interface IInputOptions {
   label: string;
-  id: string;
+  id: ICurrencyTimelineKeysType;
 }
 
 const INPUTS_OPTIONS: IInputOptions[] = [
   {
     label: 'Open Price',
-    id: 'open-price',
+    id: 'priceOpen',
   },
   {
     label: 'Close Price',
-    id: 'close-price',
+    id: 'priceClose',
   },
   {
     label: 'Highest Price',
-    id: 'highest-price',
+    id: 'priceHigh',
   },
   {
     label: 'Lowest Price',
-    id: 'lowest-price',
+    id: 'priceLow',
   },
 ];
 

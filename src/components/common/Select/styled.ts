@@ -25,10 +25,6 @@ export const StyledSelect = styled.select`
   appearance: none;
   background-color: inherit;
 
-  & option:first-child {
-    display: none;
-  }
-
   @media ${getMediaQuery('laptopM')} {
     font-size: ${({ theme }) => theme.fontSizes[2]};
     line-height: ${({ theme }) => theme.lineHeights[1]};

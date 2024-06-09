@@ -7,7 +7,7 @@ const StyledContainer = styled.div`
   justify-content: space-between;
   margin-top: ${({ theme }) => theme.spaces[7]};
 
-  @media ${getMediaQuery('mobileM')} {
+  @media ${getMediaQuery('mobileL')} {
     flex-direction: column;
     gap: ${({ theme }) => theme.spaces[2]};
   }

@@ -1,19 +1,19 @@
-import { Component, ReactNode } from 'react';
+import { PureComponent, ReactNode } from 'react';
 
 import { CurrencyIcon, Title } from '@/components';
 import namesMap from '@/constants/currenciesNamesMap';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
 
-import { StyledCode, StyledInformationContainer } from './styled';
+import { StyledCode, StyledContainer, StyledInformationContainer } from './styled';
 
 interface IComponentProps {
   code: AppCurrencyCodesType;
 }
 
-class SelectedCurrency extends Component<IComponentProps> {
+class SelectedCurrency extends PureComponent<IComponentProps> {
   render(): ReactNode {
     return (
-      <>
+      <StyledContainer>
         <CurrencyIcon code={this.props.code} />
         <StyledInformationContainer>
           <Title as="h4" $fontSize="M" $fontWeight="light">
@@ -21,7 +21,7 @@ class SelectedCurrency extends Component<IComponentProps> {
           </Title>
           <StyledCode>{this.props.code}</StyledCode>
         </StyledInformationContainer>
-      </>
+      </StyledContainer>
     );
   }
 }
