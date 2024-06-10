@@ -4,6 +4,52 @@
 
 Modsen Currency Tracker is an application where you can find the current exchange rates of currencies (and cryptocurrencies). Also you are able to see a graph of changes in their values during a last month, as well as find the nearest banks with the currencies of interest.
 
+# How to run
+
+To run locally, you need to follow instructions below:
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+2. Install dependencies:
+
+```bash
+npm i
+
+# or
+
+yarn
+```
+
+3. Create an `.env` file (like `.env.example`) and put there your keys for all APIs that are used in the project (CurrencyAPI & MapboxJS) and also add URL for APIs requests.
+
+4. Now you can view the commands and run the application using one of them (`:dev` - run in development mode, `:build` - build the production version):
+
+```bash
+npm run build:dev
+yarn build:dev
+
+# or
+
+npm run build:prod
+yarn build:prod
+```
+
+5. Also this project has ability to run test (`:jest` - jest unit tests, `:cypress` - e2e cypress tests):
+
+```bash
+npm run test:jest
+yarn test:jest
+
+# or
+
+npm run test:cypress
+yarn test:cypress
+```
+
 # Stack
 
 Application technologies list:
@@ -64,3 +110,7 @@ Contact information is located on this page. All information links are clickable
 # Deploy
 
 The app works here: [>Visit deployment<](https://modsen-currency-tracker-two.vercel.app/)
+
+## Contributors:
+
+- Andei Shket ([@andreushk](https://github.com/Andreushk));
