@@ -10,6 +10,7 @@ const StyledSection = styled.section<IStyleProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  height: ${({ theme }) => theme.heights[9]};
   padding-top: ${({ theme }) => theme.spaces[7]};
   padding-bottom: ${({ theme }) => theme.spaces[11]};
   padding-right: ${({ theme }) => theme.spaces[12]};
@@ -35,10 +36,11 @@ const StyledSection = styled.section<IStyleProps>`
     `}
 
   @media ${getMediaQuery('desktopM')} {
+    height: auto;
     gap: ${({ theme }) => theme.spaces[3]};
     & svg {
-      width: 200px;
-      height: 210px;
+      width: 12.5rem;
+      height: 13.125rem;
     }
   }
 
@@ -47,8 +49,8 @@ const StyledSection = styled.section<IStyleProps>`
     padding-left: ${({ theme }) => theme.spaces[7]};
 
     & svg {
-      width: 150px;
-      height: 160px;
+      width: 9.375rem;
+      height: 10rem;
     }
   }
 
