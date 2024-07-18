@@ -14,10 +14,10 @@ interface IComponentProps {
 const CurrencyItem: React.FC<IComponentProps> = ({ baseCurrencyCode, onSelect }) => {
   const [selectedCode, setSelectedCode] = useState<AppCurrencyCodesType>('USD');
 
-  const handleSelectedCode = (selectedCode: string) => {
+  const handleSelectedCode = (selectedCode: AppCurrencyCodesType) => {
     if (onSelect) {
-      setSelectedCode(selectedCode as AppCurrencyCodesType);
-      onSelect(selectedCode as AppCurrencyCodesType);
+      setSelectedCode(selectedCode);
+      onSelect(selectedCode);
     }
   };
 

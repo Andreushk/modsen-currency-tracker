@@ -3,7 +3,7 @@ import { AppCurrencyCodesType } from '@/types/api/currencies';
 
 export const BASE_CURRENCY: AppCurrencyCodesType = 'USD';
 
-export const SELECT_OPTION: SelectOptionType[] = [
+export const SELECT_OPTION: SelectOptionType<AppCurrencyCodesType>[] = [
   {
     value: 'USD',
     displayValue: 'USD',

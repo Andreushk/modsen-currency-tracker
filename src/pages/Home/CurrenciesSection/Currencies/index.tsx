@@ -1,6 +1,6 @@
 import { CurrenciesGrid, Currency } from '@/components';
 import { AppCurrencyCodesType, ICurrencyExchangeData } from '@/types/api/currencies';
-import getParentDataAttribute from '@/utils/helpers/getParentDataAttribute';
+import getCurrencyCodeFromParentAttribute from '@/utils/helpers/getCurrencyCodeFromParentAttribute';
 
 import STOCKS_OPTIONS from '../options';
 
@@ -14,10 +14,10 @@ interface IComponentProps {
 
 const Currencies: React.FC<IComponentProps> = ({ currenciesData, onClick }) => {
   const handleGridClick = (clickedElement: HTMLElement) => {
-    const currencyCode = getParentDataAttribute(clickedElement, 'data-currency-code');
+    const currencyCode = getCurrencyCodeFromParentAttribute(clickedElement, 'data-currency-code');
 
     if (currencyCode) {
-      onClick(currencyCode as AppCurrencyCodesType);
+      onClick(currencyCode);
     }
   };
 

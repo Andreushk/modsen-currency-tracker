@@ -2,7 +2,7 @@ import { PureComponent, ReactNode } from 'react';
 
 import { currencies } from '@/constants/currencies';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
-import getParentDataAttribute from '@/utils/helpers/getParentDataAttribute';
+import getCurrencyCodeFromParentAttribute from '@/utils/helpers/getCurrencyCodeFromParentAttribute';
 
 import ListItem from './ListItem';
 import StyledContainer from './styled';
@@ -17,10 +17,10 @@ class SuggestionsList extends PureComponent<IComponentProps> {
     const clickedElement = e.target as HTMLElement | null;
 
     if (clickedElement) {
-      const currencyCode = getParentDataAttribute(clickedElement, 'data-currency-code');
+      const currencyCode = getCurrencyCodeFromParentAttribute(clickedElement, 'data-currency-code');
 
       if (currencyCode) {
-        this.props.onSelect(currencyCode as AppCurrencyCodesType);
+        this.props.onSelect(currencyCode);
       }
     }
   };

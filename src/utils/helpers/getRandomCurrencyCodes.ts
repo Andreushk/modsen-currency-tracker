@@ -14,9 +14,9 @@ function getRandomCurrencyCodes(): AppCurrencyCodesType[] {
 
   while (currencies.length < 5) {
     const randomIndex: number = Math.floor(Math.random() * nonUsdEurCurrencies.length);
-    const randomCurrency: string = nonUsdEurCurrencies[randomIndex];
-    if (!currencies.includes(randomCurrency as AppCurrencyCodesType)) {
-      currencies.push(randomCurrency as AppCurrencyCodesType);
+    const randomCurrency: AppCurrencyCodesType = nonUsdEurCurrencies[randomIndex];
+    if (!currencies.includes(randomCurrency)) {
+      currencies.push(randomCurrency);
     }
   }
 

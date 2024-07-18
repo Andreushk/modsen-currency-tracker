@@ -11,8 +11,8 @@ interface IComponentProps {
 }
 
 class SelectPart extends PureComponent<IComponentProps> {
-  handleSelect = (selectedCurrencyCode: string): void => {
-    this.props.onSelect(selectedCurrencyCode as AppCurrencyCodesType);
+  handleSelect = (selectedCurrencyCode: AppCurrencyCodesType): void => {
+    this.props.onSelect(selectedCurrencyCode);
   };
 
   render(): ReactNode {

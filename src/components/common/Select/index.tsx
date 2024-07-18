@@ -4,20 +4,24 @@ import SelectIcon from '@/assets/icons/vector.svg';
 
 import { StyledContainer, StyledSelect, StyledSelectOpenIcon } from './styled';
 
-export type SelectOptionType = {
+export type SelectOptionType<T = string> = {
   displayValue: string;
-  value: string;
+  value: T;
 };
 
-interface IComponentProps {
-  selectOptions: SelectOptionType[];
-  changeCB: (selectedValue: string) => void;
+interface IComponentProps<T = string> {
+  selectOptions: SelectOptionType<T>[];
+  changeCB: (selectedValue: T) => void;
   withDefaultValue?: boolean;
 }
 
-const Select: React.FC<IComponentProps> = ({ selectOptions, changeCB, withDefaultValue }) => {
+const Select = <T extends string>({
+  selectOptions,
+  changeCB,
+  withDefaultValue,
+}: IComponentProps<T>) => {
   const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    changeCB(event.target.value);
+    changeCB(event.target.value as T);
   };
 
   return (
@@ -30,7 +34,7 @@ const Select: React.FC<IComponentProps> = ({ selectOptions, changeCB, withDefaul
         data-testid="select"
       >
         {selectOptions.map(({ displayValue, value }) => (
-          <option key={value} value={value}>
+          <option key={String(value)} value={value}>
             {displayValue}
           </option>
         ))}
