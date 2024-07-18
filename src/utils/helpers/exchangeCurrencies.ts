@@ -8,15 +8,10 @@ interface IExchangeResult {
 }
 
 function exchangeCurrency(base: string, secondary: string, rate: number, from: FromCurrencyType) {
-  const result: IExchangeResult = { base: '0', secondary: '0' };
-
-  if (from === 'base') {
-    result.base = base;
-    result.secondary = roundExchangeRate(+base * rate);
-  } else {
-    result.base = roundExchangeRate(+secondary / rate);
-    result.secondary = secondary;
-  }
+  const result: IExchangeResult =
+    from === 'base'
+      ? { base, secondary: roundExchangeRate(+base * rate) }
+      : { base: roundExchangeRate(+secondary / rate), secondary };
 
   return result;
 }
