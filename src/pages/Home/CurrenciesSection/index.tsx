@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { LastUpdated, SectionError, SectionWithPaddings } from '@/components';
 import { useAppDispatch, useAppSelector, useDisableBodyScroll } from '@/hooks';
 import fetchCurrenciesWithRates from '@/store/reducers/currencies/actionCreators';
+import { currenciesSelector } from '@/store/reducers/selectors';
 import { AppCurrencyCodesType } from '@/types/api/currencies';
 
 import Currencies from './Currencies';
@@ -11,7 +12,7 @@ import Modal from './Modal';
 
 const CurrenciesSection: React.FC = () => {
   const [currencyCode, setCurrencyCode] = useState<AppCurrencyCodesType | null>(null);
-  const { currencies, isLoading, lastUpdated, error } = useAppSelector((state) => state.currencies);
+  const { currencies, isLoading, lastUpdated, error } = useAppSelector(currenciesSelector);
 
   const dispatch = useAppDispatch();
   useDisableBodyScroll(Boolean(currencyCode));

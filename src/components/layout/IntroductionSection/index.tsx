@@ -1,11 +1,12 @@
 import { Logo } from '@/components';
-import useAppSelector from '@/hooks/useAppSelector';
+import { useAppSelector } from '@/hooks';
+import { darkModeSelector } from '@/store/reducers/selectors';
 
 import StyledSection from './styled';
 import TextPart from './TextPart';
 
 const IntroductionSection: React.FC = () => {
-  const isDarkMode: boolean = useAppSelector((state) => state.theme.isDarkMode);
+  const isDarkMode: boolean = useAppSelector(darkModeSelector);
 
   return (
     <StyledSection $isDarkMode={isDarkMode}>

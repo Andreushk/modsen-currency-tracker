@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { BurgerMenuButton, Logo, Switch } from '@/components';
 import { useAppSelector, useDisableBodyScroll, useScreenWidth } from '@/hooks';
+import { darkModeSelector } from '@/store/reducers/selectors';
 import { toggle } from '@/store/reducers/theme';
 import { darkTheme } from '@/styles/theme';
 
@@ -13,7 +14,7 @@ import { StyledHeader, StyledHeaderContentContainer } from './styled';
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
-  const isDarkMode = useAppSelector((state) => state.theme.isDarkMode);
+  const isDarkMode = useAppSelector(darkModeSelector);
   const dispatch = useDispatch();
 
   const isWideScreen: boolean = useScreenWidth(parseInt(darkTheme.breakpoints.tabletS));

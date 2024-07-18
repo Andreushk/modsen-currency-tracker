@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { Overlay, PortalToBody, Switch } from '@/components';
 import { useAppSelector } from '@/hooks';
+import { darkModeSelector } from '@/store/reducers/selectors';
 import { toggle } from '@/store/reducers/theme';
 
 import Navigation from './Navigation';
@@ -14,7 +15,7 @@ interface IComponentProps {
 
 const MobileMenu: React.FC<IComponentProps> = ({ closeCB }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const isDarkTheme = useAppSelector((state) => state.theme.isDarkMode);
+  const isDarkTheme = useAppSelector(darkModeSelector);
 
   const dispatch = useDispatch();
 
